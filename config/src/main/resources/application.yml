@@ -1,0 +1,41 @@
+#主配置文件，将框架需要的参数配置在此
+
+#服务端口
+server:
+  port: 8080
+
+spring:
+  application:
+    name: service-web
+  #激活的配置文件
+  profiles:
+    active: test
+  #数据库
+  datasource:
+      url: jdbc:mysql://10.128.91.198:3306/springcloud?createDatabaseIfNotExist=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true
+      username: root
+      password: zaq1XSW2
+      driver-class-name: com.mysql.jdbc.Driver
+  #rabbitmq:
+   # host: localhost
+   # port: 5672
+
+
+## 刷新时，关闭安全验证
+management:
+  security:
+    enabled: false
+
+
+
+logback:
+  logdir: logs
+  appname: ${spring.application.name}
+
+
+feign:
+  #hystrix调用fallback需要加此配置
+  hystrix:
+    enabled: true
+
+

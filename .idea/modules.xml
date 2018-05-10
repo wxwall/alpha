@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/alpha.iml" filepath="$PROJECT_DIR$/alpha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/busi/busi.iml" filepath="$PROJECT_DIR$/busi/busi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/compile/compile.iml" filepath="$PROJECT_DIR$/compile/compile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config/config.iml" filepath="$PROJECT_DIR$/config/config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model/model.iml" filepath="$PROJECT_DIR$/model/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multi/multi.iml" filepath="$PROJECT_DIR$/multi/multi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/outer/outer.iml" filepath="$PROJECT_DIR$/outer/outer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent/parent.iml" filepath="$PROJECT_DIR$/parent/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-web/service.iml" filepath="$PROJECT_DIR$/service-web/service.iml" />
+    </modules>
+  </component>
+</project>

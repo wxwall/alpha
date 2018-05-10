@@ -1,0 +1,30 @@
+#bootstrap.yml作用是在springboot读到application.yml之前加载的配置,除非必要，否则尽量不要配置在此文件中
+
+#服务注册地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://sc:sc@10.128.91.223:50101/eureka/,http://sc:sc@10.128.91.223:50102/eureka/,http://sc:sc@10.128.91.224:50101/eureka/,http://sc:sc@10.128.91.224:50102/eureka/,http://sc:sc@10.128.91.225:50101/eureka/,http://sc:sc@10.128.91.225:50102/eureka/
+
+
+spring:
+  cloud:
+    #加载配置中心的配置
+    config:
+      name: service-web
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: configserver
+    #跟踪总线事件，这样在/bus/refresh端点被请求后，访问/trace
+    bus:
+      trace:
+        enabled: true
+    #配置kafka
+    stream:
+      kafka:
+        binder:
+          zk-nodes: 10.128.90.194:2181
+          brokers: 10.128.90.194:19092
+
+
