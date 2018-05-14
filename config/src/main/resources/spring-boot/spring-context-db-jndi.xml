@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+   <!--多数据源配置，可为udal-->
+   <bean id="dataSource0" class="org.springframework.jndi.JndiObjectFactoryBean">
+      <property name="jndiName">
+         <value>java:comp/env/jdbc/demoDB</value>
+      </property>
+   </bean>
+   <!--多数据源配置，可为udal-->
+   <bean id="dataSource1" class="org.springframework.jndi.JndiObjectFactoryBean">
+      <property name="jndiName">
+         <value>java:comp/env/jdbc/demoDB</value>
+      </property>
+   </bean>
+   <!--多数据源配置，可为udal-->
+   <bean id="dataSource2" class="org.springframework.jndi.JndiObjectFactoryBean">
+      <property name="jndiName">
+         <value>java:comp/env/jdbc/demoDB</value>
+      </property>
+   </bean>
+
+   <bean id="dataSource" class="com.ai.dbua.route.DynamicDataSource" primary="true">
+      <property name="targetDataSources">
+         <map>
+            <entry key="dataSource0" value-ref="dataSource0" />
+            <entry key="dataSource1" value-ref="dataSource1" />
+            <entry key="dataSource2" value-ref="dataSource2" />
+         </map>
+      </property>
+   </bean>
+</beans>
