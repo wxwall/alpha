@@ -28,7 +28,7 @@
  - 其他日志都以info的形式输出到控制台
  
 ####依赖关系
- - 所有模块父工程为parent
+ - 父工程为parent
  - 所有模块依赖common
  - 所有模块可选依赖model，防止model与common同时依赖造成循环依赖
  - service-web为可执行集成tomcat的jar包

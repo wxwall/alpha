@@ -1,5 +1,6 @@
 package com.asiainfo.common.exception;
 
+import com.asiainfo.common.model.ResponseCode;
 import com.asiainfo.common.model.RestResult;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -30,7 +31,7 @@ public class GlobalExceptionHandler {
     public RestResult<String> jsonErrorHandler(HttpServletRequest req, BaseException e) throws Exception {
         RestResult<String> r = new RestResult<>();
         r.setMessage(getErrorInfoFromException(e));
-        r.setCode(500);
+        r.setCode(ResponseCode.SERVER_ERROR_CODE.getCode());
         r.setData(req.getRequestURL().toString());
         return r;
     }

@@ -1,5 +1,7 @@
 package com.asiainfo.common.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,6 +9,7 @@ import java.util.Date;
 /**
  * 系统日志
  */
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_EMPTY)
 public class SysLogEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -15,6 +18,8 @@ public class SysLogEntity implements Serializable {
 	private String username;
 	//用户操作
 	private String operation;
+	//服务主机
+	private String hostIP;
 	//请求方法
 	private String method;
 	//请求参数
@@ -119,6 +124,13 @@ public class SysLogEntity implements Serializable {
 		this.currentTime = currentTime;
 	}
 
+	public String getHostIP() {
+		return hostIP;
+	}
+
+	public void setHostIP(String hostIP) {
+		this.hostIP = hostIP;
+	}
 
 	@Override
 	public String toString() {
@@ -126,6 +138,7 @@ public class SysLogEntity implements Serializable {
 				"id=" + id +
 				", username='" + username + '\'' +
 				", operation='" + operation + '\'' +
+				", hostIP='" + hostIP + '\'' +
 				", method='" + method + '\'' +
 				", params='" + params + '\'' +
 				", ip='" + ip + '\'' +
