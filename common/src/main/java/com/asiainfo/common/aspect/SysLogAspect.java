@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
+import java.net.InetAddress;
 import java.util.Date;
 
 
@@ -79,6 +80,9 @@ public class SysLogAspect {
 		//方法消耗时间
 		Long currentTime = System.currentTimeMillis() - beginTime;
 		sysLog.setCurrentTime(currentTime);
+
+		//保存服务IP
+		sysLog.setHostIP(InetAddress.getLocalHost().getHostAddress());
 
 		//保存系统日志
 		//sysLogService.save(sysLog);
