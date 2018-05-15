@@ -1,0 +1,36 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.asiainfo.busi.dao.ICustQueryDAO">
+
+    <select id="queryStaffBaseInfo" parameterType="java.util.Map" resultType="java.util.HashMap">
+        select t.Host host,
+               t.User user
+                from user t where t.User = #{userName}
+    </select>
+
+    <select id="queryProdInstByCond" parameterType="java.util.Map" resultType="java.util.HashMap">
+        <!--select pi.prod_inst_id prodInstId,
+		        pi.PROD_ID prodId,
+		        pi.ACC_PROD_INST_ID  accProdInstId
+        from prod_inst pi
+          where pi.prod_inst_id = #{prodInstId}-->
+        <!--select CUST_ID from authen_info where authen_info_id = 1-->
+        SELECT
+        EMPLOYEE_ID,
+        NAME,
+        email,
+        area_id
+        FROM
+        employee
+        <where>
+            <if test="employeeId != null">
+                EMPLOYEE_ID =  #{employeeId}
+            </if>
+        </where>
+    </select>
+
+
+
+</mapper>

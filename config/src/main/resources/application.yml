@@ -26,7 +26,8 @@ management:
   security:
     enabled: false
 
-
+mybatis:
+    mapperLocations: classpath:mappers/*.xml
 
 logback:
   logdir: logs

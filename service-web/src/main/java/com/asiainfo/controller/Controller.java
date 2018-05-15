@@ -1,7 +1,9 @@
 package com.asiainfo.controller;
 
+import com.ai.dbua.route.DataSourceContextHolder;
 import com.asiainfo.busi.BusiModel;
 import com.asiainfo.busi.BusiSMO;
+import com.asiainfo.busi.service.ICustQuerySMO;
 import com.asiainfo.common.annotation.SysLog;
 import com.asiainfo.common.controller.AbstractController;
 import com.asiainfo.common.exception.BaseException;
@@ -15,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by wuxiaowei on 2018/5/3
  */
@@ -26,6 +31,8 @@ public class Controller extends AbstractController {
 
     @Autowired
     BusiSMO busiSMO;
+    @Autowired
+    ICustQuerySMO custQuerySMO;
 
     @SysLog
     @ApiOperation(value="查询Demo",notes="用来查看服务是否正常启动")
@@ -83,6 +90,21 @@ public class Controller extends AbstractController {
         return new RestResult<>();
     }
 
+    @ApiOperation(value="查询用户信息",notes="从mysql中查询到数据并返回")
+    @RequestMapping(value = "/queryProdInstById" ,method = RequestMethod.POST)
+    public String queryProdInstById(){
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("employeeId",1111);
+        DataSourceContextHolder.setDataSourceType("dataSource0");
+        try{
+            Map inst = custQuerySMO.queryProdInstByCond(map);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            return "hello controller";
+        }
+
+    }
 
 
 }
