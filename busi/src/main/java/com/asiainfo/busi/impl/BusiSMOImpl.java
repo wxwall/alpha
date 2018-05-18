@@ -4,6 +4,7 @@ import com.asiainfo.busi.BusiModel;
 import com.asiainfo.busi.BusiSMO;
 import com.asiainfo.busi.dao.BusiDao;
 import com.asiainfo.common.model.RestResult;
+import com.asiainfo.config.busi.ApolloMDA;
 import com.asiainfo.config.busi.BusiMDA;
 import com.asiainfo.multi.BusiMultiSMO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class BusiSMOImpl implements BusiSMO {
     @Autowired
     BusiMDA prodOfferMDA;
 
+    @Autowired
+    ApolloMDA apolloMDA;
+
     @Override
     public String queryDemo() {
         return "hello queryDemo";
@@ -43,5 +47,10 @@ public class BusiSMOImpl implements BusiSMO {
     @Override
     public String queryConfigDemo() {
         return prodOfferMDA.getProdOfferName() +"   " + prodOfferMDA.getProdOfferId();
+    }
+
+    @Override
+    public String queryConfigByApollo() {
+        return apolloMDA.getName() + "   " + apolloMDA.getAge() + "   " + apolloMDA.getJsonBeans();
     }
 }

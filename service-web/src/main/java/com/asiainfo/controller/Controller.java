@@ -36,6 +36,8 @@ public class Controller extends AbstractController {
         return restResult;
     }
 
+    /**  从springcloud配置中心改为从apollo读配置中心数据*/
+    @Deprecated()
     @ApiOperation(value="查询配置",notes="检查配置是否从配置中心拿到数据了")
     @RequestMapping(value = "/queryConfigDemo" ,method = RequestMethod.GET)
     public RestResult queryConfigDemo(){
@@ -44,6 +46,13 @@ public class Controller extends AbstractController {
         return restResult;
     }
 
+    @ApiOperation(value="查询Apollo配置",notes="检查配置是否从配置中心拿到数据了")
+    @RequestMapping(value = "/queryConfigByApollo" ,method = RequestMethod.GET)
+    public RestResult queryConfigByApollo(){
+        RestResult<BusiModel> restResult = new RestResult<BusiModel>();
+        restResult.setMessage(busiSMO.queryConfigByApollo());
+        return restResult;
+    }
 
     @ApiOperation(value="查询mysql数据",notes="从mysql中查询到数据并返回")
     @RequestMapping(value = "/queryJdbcDemo" ,method = RequestMethod.GET)
