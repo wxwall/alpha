@@ -1,7 +1,7 @@
 package com.asiainfo.controller;
 
-import com.asiainfo.busi.BusiModel;
-import com.asiainfo.busi.BusiSMO;
+import com.asiainfo.config.busi.BusiModel;
+import com.asiainfo.config.busi.BusiSMO;
 import com.asiainfo.common.annotation.SysLog;
 import com.asiainfo.common.controller.AbstractController;
 import com.asiainfo.common.exception.BaseException;

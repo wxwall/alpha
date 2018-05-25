@@ -16,9 +16,20 @@ spring:
       username: root
       password: zaq1XSW2
       driver-class-name: com.mysql.jdbc.Driver
-  #rabbitmq:
-   # host: localhost
-   # port: 5672
+  #spring-boot-admin注册地址
+  boot:
+    admin:
+      url: http://10.128.91.223:51001
+
+#此处信息用于在spring-boot-admin中展示
+info:
+  app:
+    name: "@project.name@"
+    description: "这是一个web工程"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"
+
+
 
 
 ## 刷新时，关闭安全验证
