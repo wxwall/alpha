@@ -1,6 +1,6 @@
-package com.asiainfo.busi.service;
+package com.asiainfo.config.busi.service;
 
-import com.asiainfo.busi.dao.ICustQueryDAO;
+import com.asiainfo.config.busi.dao.ICustQueryDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

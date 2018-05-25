@@ -1,7 +1,7 @@
-package com.asiainfo.busi.service;
+package com.asiainfo.config.busi.service;
 
 
-import com.asiainfo.busi.model.OrderItem;
+import com.asiainfo.config.busi.model.OrderItem;
 
 /**
  * 订单服务

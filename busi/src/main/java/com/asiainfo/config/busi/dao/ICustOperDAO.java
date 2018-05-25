@@ -1,4 +1,4 @@
-package com.asiainfo.busi.dao;
+package com.asiainfo.config.busi.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 

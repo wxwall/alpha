@@ -1,8 +1,8 @@
-package com.asiainfo.busi.impl;
+package com.asiainfo.config.busi.impl;
 
-import com.asiainfo.busi.BusiModel;
-import com.asiainfo.busi.BusiSMO;
-import com.asiainfo.busi.dao.BusiDao;
+import com.asiainfo.config.busi.BusiModel;
+import com.asiainfo.config.busi.BusiSMO;
+import com.asiainfo.config.busi.dao.BusiDao;
 import com.asiainfo.common.model.RestResult;
 import com.asiainfo.config.busi.ApolloMDA;
 import com.asiainfo.config.busi.BusiMDA;

@@ -1,13 +1,11 @@
-package com.asiainfo.busi.dao;
-
-import org.apache.ibatis.annotations.Mapper;
+package com.asiainfo.config.busi.service;
 
 import java.util.Map;
 
-@Mapper
-public interface ICustQueryDAO {
+public interface ICustQuerySMO {
 
     public Map queryStaffBaseInfo(Map param);
 
     public Map queryProdInstByCond(Map param);
+
 }

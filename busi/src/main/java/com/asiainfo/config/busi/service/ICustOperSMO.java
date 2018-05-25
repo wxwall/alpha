@@ -1,4 +1,4 @@
-package com.asiainfo.busi.service;
+package com.asiainfo.config.busi.service;
 
 import java.util.List;
 
