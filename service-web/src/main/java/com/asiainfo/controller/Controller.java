@@ -3,6 +3,7 @@ package com.asiainfo.controller;
 import com.ai.dbua.route.DataSourceContextHolder;
 import com.asiainfo.busi.BusiModel;
 import com.asiainfo.busi.BusiSMO;
+import com.asiainfo.busi.service.CtgMqInterface;
 import com.asiainfo.busi.service.ICustQuerySMO;
 import com.asiainfo.common.annotation.SysLog;
 import com.asiainfo.common.controller.AbstractController;
@@ -104,6 +105,15 @@ public class Controller extends AbstractController {
             return "hello controller";
         }
 
+    }
+
+    @Autowired
+    CtgMqInterface ctgMqInterface;
+
+    @RequestMapping(value = "/sendMsgByCtgMqTest" ,method = RequestMethod.GET)
+    public String sendMsgByCtgMqTest(){
+        ctgMqInterface.sendTest();
+        return "";
     }
 
 

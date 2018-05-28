@@ -14,7 +14,7 @@ public class BusiMDA {
     @Value(value = "${BusiMDA.prodOfferName}")
     public String prodOfferName;
 
-    @Value(value = "${prodOfferId}")
+   // @Value(value = "${prodOfferId}")
     public String prodOfferId;
 
 

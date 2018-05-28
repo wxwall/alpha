@@ -39,4 +39,8 @@ feign:
   hystrix:
     enabled: true
 
-
+ctgmq:
+   config:
+     namesrvAuthID: huangshun
+     namesrvAuthPwd: 111111
+     namesrvAddr: 10.128.91.222:10000
