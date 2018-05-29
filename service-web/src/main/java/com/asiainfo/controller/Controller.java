@@ -113,8 +113,18 @@ public class Controller extends AbstractController {
     @RequestMapping(value = "/sendMsgByCtgMqTest" ,method = RequestMethod.GET)
     public String sendMsgByCtgMqTest(){
         ctgMqInterface.sendTest();
+        //ctgMqInterface.pullTest();
+        //ctgMqInterface.pushTest();
         return "";
     }
+
+    @RequestMapping(value = "/pushMsgByCtgMqTest" ,method = RequestMethod.GET)
+    public String pushMsgByCtgMqTest(){
+        ctgMqInterface.pushTest();
+        return "";
+    }
+
+
 
 
 }
