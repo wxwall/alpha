@@ -1,6 +1,8 @@
 package com.asiainfo.busi.service;
 
-import com.ai.starter.AIMQFactory;
+import com.ai.starter.exception.CtgMqBaseException;
+import com.ai.starter.factory.AIMQFactory;
+import com.ai.starter.handler.AIMQProductHandler;
 import com.ctg.mq.api.IMQProducer;
 import com.ctg.mq.api.IMQPullConsumer;
 import com.ctg.mq.api.IMQPushConsumer;
@@ -16,62 +18,48 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.UUID;
 
 @Component
 public class CtgMqInterfaceImpl implements CtgMqInterface {
 
     @Autowired
+    AIMQProductHandler aimqProductHandler;
+    @Autowired
     AIMQFactory aimqFactory;
 
     @Override
     public void sendTest() {
-        IMQProducer producer = aimqFactory.createProducer();
-        int connectResult = 0;
+
+        MQMessage message = new MQMessage("CTGMQ_TEST_PUSH",// topic CTGMQ_TEST 主题
+                "ORDER_KEY_" + UUID.randomUUID(),// key 业务唯一性字段
+                "ORDER_TAG",//tag  标签
+                ("HELLO ORDER BODY" + UUID.randomUUID()).getBytes()// body  json 字节
+        );
         try {
-            connectResult = producer.connect();
-        } catch (MQException e) {
+            MQSendResult sendResult = aimqProductHandler.sendMsg(message);
+        } catch (CtgMqBaseException e) {
+            //TODO  业务分析异常和处理
             e.printStackTrace();
+        }finally {
+            //TODO 应用最好在 容器销毁时，调用aimqFactory.close(); 关闭长连接
         }
-        if(connectResult != 0){
-            return;
-        }
-        for (int i = 0; i < 3; i++) {
-            try {
-                MQMessage message = new MQMessage(
-                        "CTGMQ_TEST_PUSH",// topic CTGMQ_TEST
-                        "ORDER_KEY_"+i,// key
-                        "ORDER_TAG",//tag
-                        ("HELLO ORDER BODY" + i).getBytes()// body
-                );
-                MQSendResult sendResult = producer.send(message);
-                System.out.println(sendResult);
-                //TODO
-            } catch (MQProducerException e) {
-                e.printStackTrace();
-            }
-        }
-        try {
-            producer.close();
-        } catch (MQException e) {
-            e.printStackTrace();
-        }
+
+
     }
 
     @Override
     public void pullTest() {
-        IMQPullConsumer pullConsumer = aimqFactory.createPullConsumer();
-        int connectResult = 0;
+        IMQPullConsumer pullConsumer = null;
         try {
-            connectResult = pullConsumer.connect();
-        } catch (MQException e) {
+            pullConsumer = aimqFactory.createPullConsumer();
+        } catch (CtgMqBaseException e) {
+            //TODO 业务处理获取连接失败的逻辑
             e.printStackTrace();
-        }
-        if (connectResult != 0) {
-            return;//报出异常
         }
 
         try {
-            List<MQResult> mqResultList = pullConsumer.consumeMessagesByTopic("CTGMQ_TEST",null,2,30000);
+            List<MQResult> mqResultList = pullConsumer.consumeMessagesByTopic("CTGMQ_TEST", null, 2, 30000);
             for (MQResult result : mqResultList) {
                 try {
                     System.out.println(result);
@@ -80,17 +68,16 @@ public class CtgMqInterfaceImpl implements CtgMqInterface {
                     //业务处理失败时，应签收失败，消息进入重试队列
                     //consumer.ackMessage(result, ConsumeStatus.RECONSUME_LATER);
                 } catch (MQException e) {
+                    //TODO 业务处理签收失败的逻辑
                     e.printStackTrace();
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
+            //TODO 业务处理消费的逻辑
             e.printStackTrace();
-        }finally {
-            try {
-                pullConsumer.close();
-            } catch (MQException e) {
-                e.printStackTrace();
-            }
+        } finally {
+
+            //TODO 应用最好在 容器销毁时，调用aimqFactory.close(); 关闭长连接
         }
     }
 
@@ -99,21 +86,18 @@ public class CtgMqInterfaceImpl implements CtgMqInterface {
      */
     @Override
     public void pushTest() {
-        IMQPushConsumer pushConsumer = aimqFactory.createPushConsumer();
-        int connectResult = 0;
+        IMQPushConsumer pushConsumer = null;
         try {
-            connectResult = pushConsumer.connect();
-        } catch (MQException e) {
+            pushConsumer = aimqFactory.createPushConsumer();
+        } catch (CtgMqBaseException e) {
+            //TODO 业务处理获取连接失败的逻辑
             e.printStackTrace();
-        }
-        if (connectResult != 0) {
-            return;//报出异常
         }
         try {
             pushConsumer.listenTopic("CTGMQ_TEST_PUSH", null, new ConsumerTopicListener() {
                 @Override
                 public ConsumerTopicStatus onMessage(List<MQResult> mqResultList) {
-                    for(MQResult result : mqResultList) {
+                    for (MQResult result : mqResultList) {
                         System.out.println(result);
                     }
                     return ConsumerTopicStatus.CONSUME_SUCCESS;//对消息批量确认(成功)
@@ -121,7 +105,10 @@ public class CtgMqInterfaceImpl implements CtgMqInterface {
                 }
             });
         } catch (MQException e) {
+            //TODO 业务处理侦听异常的逻辑
             e.printStackTrace();
+        }finally {
+            //TODO 应用最好在 容器销毁时，调用aimqFactory.close(); 关闭长连接 
         }
 
     }
