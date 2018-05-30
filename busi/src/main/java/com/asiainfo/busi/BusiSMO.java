@@ -14,4 +14,6 @@ public interface BusiSMO {
     public RestResult queryDemoForFeign(String name);
 
     String queryConfigDemo();
+
+    String queryConfigByApollo();
 }
