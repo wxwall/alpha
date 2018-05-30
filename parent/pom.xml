@@ -229,6 +229,16 @@
             <url>http://10.128.91.225:8081/nexus/content/repositories/AL-Snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
+    <repositories>
+        <repository>
+            <id>AL-Release</id>
+            <url>http://10.128.91.225:8081/nexus/content/repositories/AL-Release/</url>
+        </repository>
+        <repository>
+            <id>AL-Snapshot</id>
+            <url>http://10.128.91.225:8081/nexus/content/repositories/AL-Snapshot/</url>
+        </repository>
+    </repositories>
 
 
 
