@@ -15,6 +15,8 @@ public class BusiMDA {
     @Value(value = "${prodOfferId:123}")
     public String prodOfferId;
 
+    public String test;
+
 
     public String getProdOfferName() {
         return prodOfferName;
