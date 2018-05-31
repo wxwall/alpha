@@ -1,0 +1,39 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.asiainfo.busi.dao.ICustOperDAO">
+
+    <update id="updateProdInst" parameterType="java.util.Map">
+        <!--update prod_inst pi
+        set pi.remark =  #{remark}
+        where pi.prod_inst_id =  #{prodInstId}-->
+        UPDATE  employee
+        SET
+        NAME =  #{name}
+        <where>
+            <if test="employeeId != null">
+                EMPLOYEE_ID =  #{employeeId}
+            </if>
+        </where>
+    </update>
+
+    <insert id="addEmployee" parameterType="com.asiainfo.common.model.Employee">
+        insert into employee(
+            employee_id,
+            name,
+            email,
+            create_date,
+            area_id
+        )values(
+            #{employeeId},
+            #{name},
+            #{email},
+            sysdate(),
+            #{areaId}
+        )
+    </insert>
+
+
+
+</mapper>

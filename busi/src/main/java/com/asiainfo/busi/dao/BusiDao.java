@@ -1,6 +1,6 @@
-package com.asiainfo.config.busi.dao;
+package com.asiainfo.busi.dao;
 
-import com.asiainfo.config.busi.BusiModel;
+import com.asiainfo.busi.BusiModel;
 import com.asiainfo.common.dao.BaseDao;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

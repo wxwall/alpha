@@ -1,4 +1,4 @@
-package com.asiainfo.config.busi.model;
+package com.asiainfo.busi.model;
 
 
 import com.asiainfo.common.model.BaseModel;

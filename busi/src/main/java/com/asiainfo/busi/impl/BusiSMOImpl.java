@@ -1,11 +1,11 @@
-package com.asiainfo.config.busi.impl;
+package com.asiainfo.busi.impl;
 
-import com.asiainfo.config.busi.BusiModel;
-import com.asiainfo.config.busi.BusiSMO;
-import com.asiainfo.config.busi.dao.BusiDao;
+import com.asiainfo.busi.BusiMDA;
+import com.asiainfo.busi.BusiSMO;
+import com.asiainfo.busi.dao.BusiDao;
+import com.asiainfo.busi.BusiModel;
 import com.asiainfo.common.model.RestResult;
-import com.asiainfo.config.busi.ApolloMDA;
-import com.asiainfo.config.busi.BusiMDA;
+import com.asiainfo.busi.ApolloMDA;
 import com.asiainfo.multi.BusiMultiSMO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.asiainfo.config.busi;
+package com.asiainfo.busi;
 
 /**
  * 示例model

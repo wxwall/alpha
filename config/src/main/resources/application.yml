@@ -37,7 +37,8 @@ management:
   security:
     enabled: false
 
-
+mybatis:
+    mapperLocations: classpath:mappers/*.xml
 
 logback:
   logdir: logs
@@ -48,5 +49,13 @@ feign:
   #hystrix调用fallback需要加此配置
   hystrix:
     enabled: true
+
+ctgmq:
+   config:
+     namesrvAuthID: admin
+     namesrvAuthPwd: 123456
+     namesrvAddr: 10.128.91.222:10000;10.128.91.224:10000;10.128.91.225:10000
+     producerGroupName: producer_hs
+     consumerGroupName: dingyuecrm
 
 

@@ -1,4 +1,4 @@
-package com.asiainfo.config.busi.service;
+package com.asiainfo.busi.service;
 
 import java.util.Map;
 

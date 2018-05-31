@@ -1,4 +1,4 @@
-package com.asiainfo.config.busi;
+package com.asiainfo.busi;
 
 import com.asiainfo.common.model.RestResult;
 

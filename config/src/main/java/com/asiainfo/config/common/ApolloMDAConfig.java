@@ -1,6 +1,6 @@
 package com.asiainfo.config.common;
 
-import com.asiainfo.config.busi.ApolloMDA;
+import com.asiainfo.busi.ApolloMDA;
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.asiainfo.config.busi.service;
+package com.asiainfo.busi.service;
 
 import org.springframework.stereotype.Service;
 

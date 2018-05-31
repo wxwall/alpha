@@ -1,4 +1,4 @@
-package com.asiainfo.config.busi;
+package com.asiainfo.busi;
 
 import com.ctrip.framework.apollo.spring.annotation.ApolloJsonValue;
 import org.slf4j.Logger;

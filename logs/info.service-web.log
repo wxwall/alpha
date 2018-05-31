@@ -25,34 +25,34 @@
 2018-05-18 15:29:39,834 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 2.394 seconds (JVM running for 48.299)
 2018-05-18 15:29:51,531 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 56.96 seconds (JVM running for 59.996)
 2018-05-18 15:49:13,813 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
-2018-05-18 15:49:36,999 [main] INFO  com.asiainfo.config.busi.ApolloMDA 27 - updating batch, old value: 0, new value: 100
+2018-05-18 15:49:36,999 [main] INFO  ApolloMDA 27 - updating batch, old value: 0, new value: 100
 2018-05-18 15:49:50,779 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
 2018-05-18 15:49:51,052 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 2.315 seconds (JVM running for 53.97)
 2018-05-18 15:50:03,123 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 61.209 seconds (JVM running for 66.04)
 2018-05-18 15:57:37,741 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
-2018-05-18 15:58:00,400 [main] INFO  com.asiainfo.config.busi.ApolloMDA 27 - updating batch, old value: 0, new value: 100
-2018-05-18 15:58:06,720 [main] INFO  com.asiainfo.config.busi.ApolloMDA 27 - updating batch, old value: 0, new value: 100
+2018-05-18 15:58:00,400 [main] INFO  ApolloMDA 27 - updating batch, old value: 0, new value: 100
+2018-05-18 15:58:06,720 [main] INFO  ApolloMDA 27 - updating batch, old value: 0, new value: 100
 2018-05-18 15:58:14,165 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
 2018-05-18 15:58:14,406 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 2.308 seconds (JVM running for 52.451)
 2018-05-18 15:58:27,281 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 62.215 seconds (JVM running for 65.327)
 2018-05-18 16:06:17,194 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
-2018-05-18 16:06:45,696 [main] INFO  com.asiainfo.config.busi.ApolloMDA 38 - updating batch, old value: null, new value: jobs
-2018-05-18 16:06:49,569 [main] INFO  com.asiainfo.config.busi.ApolloMDA 27 - updating batch, old value: 0, new value: 100
-2018-05-18 16:06:59,316 [main] INFO  com.asiainfo.config.busi.ApolloMDA 38 - updating batch, old value: null, new value: jobs
-2018-05-18 16:07:05,635 [main] INFO  com.asiainfo.config.busi.ApolloMDA 27 - updating batch, old value: 0, new value: 100
+2018-05-18 16:06:45,696 [main] INFO  ApolloMDA 38 - updating batch, old value: null, new value: jobs
+2018-05-18 16:06:49,569 [main] INFO  ApolloMDA 27 - updating batch, old value: 0, new value: 100
+2018-05-18 16:06:59,316 [main] INFO  ApolloMDA 38 - updating batch, old value: null, new value: jobs
+2018-05-18 16:07:05,635 [main] INFO  ApolloMDA 27 - updating batch, old value: 0, new value: 100
 2018-05-18 16:07:12,373 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
 2018-05-18 16:07:12,598 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 2.165 seconds (JVM running for 70.048)
 2018-05-18 16:07:24,670 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 79.376 seconds (JVM running for 82.12)
 2018-05-18 16:08:41,675 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
-2018-05-18 16:08:58,175 [main] INFO  com.asiainfo.config.busi.ApolloMDA 38 - updating batch, old value: null, new value: LBJ11
-2018-05-18 16:08:58,177 [main] INFO  com.asiainfo.config.busi.ApolloMDA 27 - updating batch, old value: 0, new value: 100
-2018-05-18 16:09:03,912 [main] INFO  com.asiainfo.config.busi.ApolloMDA 38 - updating batch, old value: null, new value: LBJ11
-2018-05-18 16:09:03,912 [main] INFO  com.asiainfo.config.busi.ApolloMDA 27 - updating batch, old value: 0, new value: 100
+2018-05-18 16:08:58,175 [main] INFO  ApolloMDA 38 - updating batch, old value: null, new value: LBJ11
+2018-05-18 16:08:58,177 [main] INFO  ApolloMDA 27 - updating batch, old value: 0, new value: 100
+2018-05-18 16:09:03,912 [main] INFO  ApolloMDA 38 - updating batch, old value: null, new value: LBJ11
+2018-05-18 16:09:03,912 [main] INFO  ApolloMDA 27 - updating batch, old value: 0, new value: 100
 2018-05-18 16:09:09,385 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
 2018-05-18 16:09:09,564 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 2.186 seconds (JVM running for 42.399)
 2018-05-18 16:09:21,249 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 51.008 seconds (JVM running for 54.083)
-2018-05-18 16:10:07,520 [Apollo-Config-1] INFO  com.asiainfo.config.busi.ApolloMDA 38 - updating batch, old value: LBJ11, new value: LBJ
-2018-05-18 16:10:07,523 [Apollo-Config-1] INFO  com.asiainfo.config.busi.ApolloMDA 38 - updating batch, old value: LBJ11, new value: LBJ
+2018-05-18 16:10:07,520 [Apollo-Config-1] INFO  ApolloMDA 38 - updating batch, old value: LBJ11, new value: LBJ
+2018-05-18 16:10:07,523 [Apollo-Config-1] INFO  ApolloMDA 38 - updating batch, old value: LBJ11, new value: LBJ
 2018-05-18 16:11:43,179 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
 2018-05-18 16:12:14,820 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
 2018-05-18 16:12:15,245 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 2.518 seconds (JVM running for 45.12)
@@ -61,3 +61,18 @@
 2018-05-18 16:20:33,680 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
 2018-05-18 16:20:33,904 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 2.206 seconds (JVM running for 39.681)
 2018-05-18 16:20:45,508 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 48.47 seconds (JVM running for 51.285)
+2018-05-31 10:42:29,067 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
+2018-05-31 10:43:35,216 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
+2018-05-31 10:43:59,330 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 29.863 seconds (JVM running for 31.164)
+2018-05-31 11:00:56,474 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
+2018-05-31 11:01:19,753 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 29.951 seconds (JVM running for 31.459)
+2018-05-31 11:03:12,169 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
+2018-05-31 11:03:37,101 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 31.127 seconds (JVM running for 32.715)
+2018-05-31 11:05:17,036 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
+2018-05-31 11:05:45,738 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 35.187 seconds (JVM running for 39.412)
+2018-05-31 11:14:39,046 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
+2018-05-31 11:15:05,806 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 33.733 seconds (JVM running for 36.03)
+2018-05-31 11:27:22,009 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
+2018-05-31 11:27:46,219 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 31.133 seconds (JVM running for 32.736)
+2018-05-31 11:28:33,547 [main] INFO  com.asiainfo.ServiceApplication 597 - The following profiles are active: test
+2018-05-31 11:29:01,474 [main] INFO  com.asiainfo.ServiceApplication 57 - Started ServiceApplication in 35.036 seconds (JVM running for 37.905)

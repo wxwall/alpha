@@ -1,7 +1,10 @@
 package com.asiainfo.controller;
 
-import com.asiainfo.config.busi.BusiModel;
-import com.asiainfo.config.busi.BusiSMO;
+import com.ai.dbua.route.DataSourceContextHolder;
+import com.asiainfo.busi.BusiModel;
+import com.asiainfo.busi.BusiSMO;
+import com.asiainfo.busi.service.CtgMqInterface;
+import com.asiainfo.busi.service.ICustQuerySMO;
 import com.asiainfo.common.annotation.SysLog;
 import com.asiainfo.common.controller.AbstractController;
 import com.asiainfo.common.exception.BaseException;
@@ -15,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by wuxiaowei on 2018/5/3
  */
@@ -26,6 +32,10 @@ public class Controller extends AbstractController {
 
     @Autowired
     BusiSMO busiSMO;
+    @Autowired
+    ICustQuerySMO custQuerySMO;
+    @Autowired
+    CtgMqInterface ctgMqInterface;
 
     @SysLog
     @ApiOperation(value="查询Demo",notes="用来查看服务是否正常启动")
@@ -36,8 +46,6 @@ public class Controller extends AbstractController {
         return restResult;
     }
 
-    /**  从springcloud配置中心改为从apollo读配置中心数据*/
-    @Deprecated()
     @ApiOperation(value="查询配置",notes="检查配置是否从配置中心拿到数据了")
     @RequestMapping(value = "/queryConfigDemo" ,method = RequestMethod.GET)
     public RestResult queryConfigDemo(){
@@ -45,7 +53,6 @@ public class Controller extends AbstractController {
         restResult.setMessage(busiSMO.queryConfigDemo());
         return restResult;
     }
-
     @ApiOperation(value="查询Apollo配置",notes="检查配置是否从配置中心拿到数据了")
     @RequestMapping(value = "/queryConfigByApollo" ,method = RequestMethod.GET)
     public RestResult queryConfigByApollo(){
@@ -53,6 +60,7 @@ public class Controller extends AbstractController {
         restResult.setMessage(busiSMO.queryConfigByApollo());
         return restResult;
     }
+
 
     @ApiOperation(value="查询mysql数据",notes="从mysql中查询到数据并返回")
     @RequestMapping(value = "/queryJdbcDemo" ,method = RequestMethod.GET)
@@ -91,6 +99,38 @@ public class Controller extends AbstractController {
         logger.error("这是一个日志{}输出","error");
         return new RestResult<>();
     }
+
+    @ApiOperation(value="查询用户信息",notes="从mysql中查询到数据并返回")
+    @RequestMapping(value = "/queryProdInstById" ,method = RequestMethod.POST)
+    public String queryProdInstById(){
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("employeeId",1111);
+        DataSourceContextHolder.setDataSourceType("dataSource0");
+        try{
+            Map inst = custQuerySMO.queryProdInstByCond(map);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            return "hello controller";
+        }
+
+    }
+
+
+    @ApiOperation(value="生产者发消息",notes="生产者发消息到CTGMQ")
+    @RequestMapping(value = "/sendMsgByCtgMqTest" ,method = RequestMethod.GET)
+    public String sendMsgByCtgMqTest(){
+        ctgMqInterface.sendTest();
+        return "";
+    }
+
+    @ApiOperation(value="消费者侦听消费",notes="消费者消费CTGMQ")
+    @RequestMapping(value = "/pushMsgByCtgMqTest" ,method = RequestMethod.GET)
+    public String pushMsgByCtgMqTest(){
+        ctgMqInterface.pushTest();
+        return "";
+    }
+
 
 
 
