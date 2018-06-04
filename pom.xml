@@ -19,8 +19,6 @@
         <module>parent</module>
         <module>busi</module>
         <module>model</module>
-        <module>compile</module>
-        <module>outer</module>
     </modules>
 
 

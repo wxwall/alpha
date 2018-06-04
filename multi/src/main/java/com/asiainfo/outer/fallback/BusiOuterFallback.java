@@ -1,14 +1,14 @@
 package com.asiainfo.outer.fallback;
 
 import com.asiainfo.common.model.RestResult;
-import com.asiainfo.outer.BusiOuter;
 import org.springframework.stereotype.Component;
+import com.asiainfo.outer.BusiOuter;
 
 /**
  * Created by wuxiaowei on 2018/5/3
  */
 @Component
-public class BusiOuterFallback implements BusiOuter{
+public class BusiOuterFallback implements BusiOuter {
 
 
     @Override
