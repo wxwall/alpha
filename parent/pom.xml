@@ -13,11 +13,9 @@
     <modules>
         <module>../busi</module>
         <module>../common</module>
-        <module>../compile</module>
         <module>../config</module>
         <module>../model</module>
         <module>../multi</module>
-        <module>../outer</module>
         <module>../service-web</module>
     </modules>
 

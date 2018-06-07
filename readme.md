@@ -27,7 +27,7 @@
  - 放在com.asiainfo的所有日志都会输出到日志文件中
  - 其他日志都以info的形式输出到控制台
   #####第三方组件集成日志说明
-  > 此工程中用到的组件是logback，如果第三方组件是非logback，只要是用slf4j集成的都会在此工程中自动转到logback输出。
+  > 此工程中用到的组件是logback，如果第三方组件是非logback，请excloud相应的组件。
  
 ####依赖关系
  - 父工程为parent
@@ -43,13 +43,17 @@
   
 ####监控使用spring-boot-admin
 
-   - [测试环境地址](http://10.128.91.223:51001) ： http://10.128.91.223:51001
-   - **如果本机连测试环境，则状态是offerline，需要在测试环境配置对应的host**
    
    
+####测试环境部署的一些配置
+
+   - [springbootadmin测试环境地址](http://10.128.91.223:51001) ： 如果本机连测试环境，则状态是offerline，需要在测试环境配置对应的host
+   - [eureka](http://10.128.91.223:50101/) :服务注册与发现
+   - [service-web](http://10.128.91.223:50801/swagger-ui.html):swagger-ui
+   - [apollo](http://10.128.91.223:50151/signin) 用户：apollo 密码：admin
+   - [熔断器](http://10.128.91.223:50801/hystrix/monitor?stream=http://10.128.91.223:50801/hystrix.stream) 当GET /queryDemoForFeign方法时，可以看到数据，详情可查看**swagger-ui**界面
    
   
 
- 
  
  
