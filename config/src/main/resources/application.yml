@@ -55,7 +55,7 @@ ctgmq:
      namesrvAuthID: admin
      namesrvAuthPwd: 123456
      namesrvAddr: 10.128.91.222:10000;10.128.91.224:10000;10.128.91.225:10000
-     producerGroupName: producer_hs
      consumerGroupName: dingyuecrm
+     producerGroupName: product_hs
 
 

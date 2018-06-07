@@ -29,7 +29,7 @@ public class CtgMqInterfaceImpl implements CtgMqInterface {
     @Override
     public void sendTest() {
 
-        MQMessage message = new MQMessage("CTGMQ_TEST_PUSH",// topic CTGMQ_TEST 主题
+        MQMessage message = new MQMessage("TEST1024",// topic CTGMQ_TEST 主题
                 "ORDER_KEY_" + UUID.randomUUID(),// key 业务唯一性字段
                 "ORDER_TAG",//tag  标签
                 ("HELLO ORDER BODY" + UUID.randomUUID()).getBytes()// body  json 字节
@@ -57,7 +57,7 @@ public class CtgMqInterfaceImpl implements CtgMqInterface {
         }
 
         try {
-            List<MQResult> mqResultList = pullConsumer.consumeMessagesByTopic("CTGMQ_TEST", null, 2, 30000);
+            List<MQResult> mqResultList = pullConsumer.consumeMessagesByTopic("TEST1024", null, 2, 30000);
             for (MQResult result : mqResultList) {
                 try {
                     System.out.println(result);
