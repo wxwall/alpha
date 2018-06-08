@@ -190,30 +190,9 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${springfox-swagger.version}</version>
             </dependency>
-            <!-- 热部署 -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>springloaded</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-devtools</artifactId>
-                <optional>true</optional>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <fork>true</fork>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 
     <!--  上传至nexus-->
@@ -227,16 +206,6 @@
             <url>http://10.128.91.225:8081/nexus/content/repositories/AL-Snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
-    <repositories>
-        <repository>
-            <id>AL-Release</id>
-            <url>http://10.128.91.225:8081/nexus/content/repositories/AL-Release/</url>
-        </repository>
-        <repository>
-            <id>AL-Snapshot</id>
-            <url>http://10.128.91.225:8081/nexus/content/repositories/AL-Snapshot/</url>
-        </repository>
-    </repositories>
 
 
 
