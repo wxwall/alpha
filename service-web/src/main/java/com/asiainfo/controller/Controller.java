@@ -124,6 +124,14 @@ public class Controller extends AbstractController {
         return "";
     }
 
+
+    @ApiOperation(value="消费者PULL消费",notes="消费者消费CTGMQ")
+    @RequestMapping(value = "/pullMsgByCtgMqTest" ,method = RequestMethod.GET)
+    public String pullMsgByCtgMqTest(){
+        ctgMqInterface.pullTest();
+        return "";
+    }
+
     @ApiOperation(value="消费者侦听消费",notes="消费者消费CTGMQ")
     @RequestMapping(value = "/pushMsgByCtgMqTest" ,method = RequestMethod.GET)
     public String pushMsgByCtgMqTest(){
