@@ -1,6 +1,6 @@
 package com.asiainfo.busi.dao;
 
-import com.asiainfo.busi.model.OrderItem;
+import com.asiainfo.busi.OrderItem;
 import com.asiainfo.common.dao.BaseDao;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

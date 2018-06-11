@@ -1,7 +1,7 @@
 package com.asiainfo.busi.service.impl;
 
 
-import com.asiainfo.busi.model.OrderItem;
+import com.asiainfo.busi.OrderItem;
 import com.asiainfo.busi.service.OrderItemService;
 import com.asiainfo.busi.dao.OrderItemDAO;
 import org.springframework.beans.factory.annotation.Autowired;
