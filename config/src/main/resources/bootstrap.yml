@@ -4,7 +4,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://sc:sc@10.128.91.223:50101/eureka/,http://sc:sc@10.128.91.223:50102/eureka/,http://sc:sc@10.128.91.224:50101/eureka/,http://sc:sc@10.128.91.224:50102/eureka/,http://sc:sc@10.128.91.225:50101/eureka/,http://sc:sc@10.128.91.225:50102/eureka/
+      defaultZone: http://sc:sc@10.128.91.223:50101/eureka/,http://sc:sc@10.128.91.223:50102/eureka/,http://sc:sc@10.128.91.224:50101/eureka/,http://sc:sc@10.128.91.224:50102/eureka/,http://sc:sc@10.128.91.225:50102/eureka/
 
 
 #配置中心暂时不用，替换成apollo

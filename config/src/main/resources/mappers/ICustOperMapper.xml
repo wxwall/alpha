@@ -2,7 +2,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.asiainfo.busi.dao.ICustOperDAO">
+<mapper namespace="ICustOperDAO">
 
     <update id="updateProdInst" parameterType="java.util.Map">
         <!--update prod_inst pi
@@ -18,7 +18,7 @@
         </where>
     </update>
 
-    <insert id="addEmployee" parameterType="com.asiainfo.common.model.Employee">
+    <insert id="addEmployee" parameterType="com.asiainfo.crm.common.model.Employee">
         insert into employee(
             employee_id,
             name,

@@ -19,8 +19,6 @@
         <module>../service-web</module>
     </modules>
 
-
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -206,7 +204,5 @@
             <url>http://10.128.91.225:8081/nexus/content/repositories/AL-Snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
-
-
 
 </project>
