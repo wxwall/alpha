@@ -57,7 +57,6 @@
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -103,7 +102,15 @@
 
 	<build>
 		<plugins>
-
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.5.4.RELEASE</version>
+				<configuration>
+				<mainClass>com.asiainfo.crm.ServiceApplication</mainClass> <!--主类 包含main-->
+				<layout>JAR</layout> <!---包类型(必须大写) JAR，WAR，ZIP，MODULE，NONE-->
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
