@@ -57,6 +57,7 @@
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 
+		<!-- mysql-->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -83,22 +84,8 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-
-
-
 	</dependencies>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<build>
 		<plugins>
@@ -107,10 +94,13 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>1.5.4.RELEASE</version>
 				<configuration>
-				<mainClass>com.asiainfo.crm.ServiceApplication</mainClass> <!--主类 包含main-->
-				<layout>JAR</layout> <!---包类型(必须大写) JAR，WAR，ZIP，MODULE，NONE-->
+					<fork>true</fork>
+					<mainClass>com.asiainfo.crm.ServiceApplication</mainClass> <!--主类 包含main-->
+					<layout>JAR</layout> <!---包类型(必须大写) JAR，WAR，ZIP，MODULE，NONE-->
 				</configuration>
 			</plugin>
+
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
