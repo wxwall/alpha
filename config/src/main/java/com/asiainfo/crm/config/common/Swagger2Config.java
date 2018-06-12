@@ -22,7 +22,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ConfigurationProperties
 public class Swagger2Config {
 
-    private String basePackage = "com.asiainfo.controller";
+    private String basePackage = "com.asiainfo.crm.controller";
 
     @Bean
     public Docket createRestApi() {
