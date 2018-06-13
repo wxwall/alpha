@@ -55,6 +55,9 @@
     <logger name="org.springframework.web.servlet.DispatcherServlet" level="DEBUG" additivity="true">
     </logger>
 
+    <!-- 需要源码打印debug日志-->
+    <!--<logger name="org.springframework.cloud.netflix.feign" level="DEBUG" additivity="true">
+    </logger>-->
 
     <!--基础日志输出到控制台-->
     <root level="INFO">

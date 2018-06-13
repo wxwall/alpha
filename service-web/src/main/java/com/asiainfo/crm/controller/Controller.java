@@ -9,14 +9,12 @@ import com.asiainfo.crm.common.annotation.SysLog;
 import com.asiainfo.crm.common.controller.AbstractController;
 import com.asiainfo.crm.common.exception.BaseException;
 import com.asiainfo.crm.common.model.RestResult;
+import com.asiainfo.crm.multi.SoWebMultiSMO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,6 +34,8 @@ public class Controller extends AbstractController {
     ICustQuerySMO custQuerySMO;
     @Autowired
     CtgMqInterface ctgMqInterface;
+    @Autowired
+    SoWebMultiSMO soWebMultiSMO;
 
     @SysLog
     @ApiOperation(value="查询Demo",notes="用来查看服务是否正常启动")
@@ -139,7 +139,11 @@ public class Controller extends AbstractController {
         return "";
     }
 
-
-
+    @ApiOperation(value="http远程调用",notes="调用非eureka注册的外部系统，194测试环境后台查询接口")
+    @RequestMapping(value = "/queryOrderListInfoByCustomerOrderId" ,method = RequestMethod.POST)
+    public RestResult queryOrderListInfoByCustomerOrderId(@RequestBody String jsonParam){
+        RestResult restResult = soWebMultiSMO.queryOrderListInfoByCustomerOrderId(jsonParam);
+        return restResult;
+    }
 
 }
