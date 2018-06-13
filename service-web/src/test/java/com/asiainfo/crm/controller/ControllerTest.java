@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -79,6 +80,17 @@ public class ControllerTest {
     public void queryLogDemo() throws Exception {
         mvc.perform(MockMvcRequestBuilders
                 .get("/queryLogDemo"))
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
+
+    @Test
+    public void queryOrderListInfoByCustomerOrderId() throws Exception {
+        mvc.perform(MockMvcRequestBuilders
+                .post("/queryOrderListInfoByCustomerOrderId")
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"customerOrderId\":120001470540,\"areaId\":8320200,\"methodName\":\"updateOrderInfoForCheck\"}".getBytes()))
                 .andExpect(status().isOk())
                 .andDo(print());
     }

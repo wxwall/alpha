@@ -89,6 +89,8 @@
 
 	<build>
 		<plugins>
+
+			<!-- 打包时设置mainclass,防止启动时找不到主类-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -100,7 +102,16 @@
 				</configuration>
 			</plugin>
 
+			<!-- 打包时需要将整个测试用例跑通，开发阶段设置成true,可跳过测试 -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<skipTests>false</skipTests>
+				</configuration>
+			</plugin>
 
+			<!-- 编译时指定jdk版本-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -111,6 +122,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+
 			<!-- 自动上传到测试服务器，并执行自定义命令-->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
