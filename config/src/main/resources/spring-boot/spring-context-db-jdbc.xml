@@ -13,9 +13,9 @@
    <bean id="dataSource0" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
       <property name="driverClassName" value="com.mysql.jdbc.Driver" />
       <!-- 基本属性 url、user、password-->
-      <property name="url" value="jdbc:mysql://10.128.91.222:8866/wuyi?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000" />
+      <property name="url" value="jdbc:mysql://10.128.91.222:8866/yxzy?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000" />
       <property name="username" value="dpuser1" />
-      <property name="password" value="1234567" />
+      <property name="password" value="Asiainfo@123" />
       <!--
       <property name="url" value="jdbc:mysql://10.128.91.198:3306/mysql" />
       <property name="username" value="root" />
@@ -40,9 +40,9 @@
    <bean id="dataSource1" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
       <property name="driverClassName" value="com.mysql.jdbc.Driver" />
       <!-- 基本属性 url、user、password -->
-      <property name="url" value="jdbc:mysql://10.128.91.222:8866/wuyi?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000" />
+      <property name="url" value="jdbc:mysql://10.128.91.222:8866/yxzy?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000" />
       <property name="username" value="dpuser1" />
-      <property name="password" value="1234567" />
+      <property name="password" value="Asiainfo@123" />
       <!-- 基本属性 url、user、password
       <property name="url" value="jdbc:mysql://10.1.241.206:8850/TestSchema" />
       <property name="username" value="admin" />
