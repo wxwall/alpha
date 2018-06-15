@@ -65,6 +65,7 @@
    </bean>
 
    <bean id="dataSource" class="com.ai.dbua.route.DynamicDataSource" primary="true">
+      <property name="defaultTargetDataSource" ref="dataSource0"></property>
       <property name="targetDataSources">
          <map>
             <entry key="dataSource0" value-ref="dataSource0" />
