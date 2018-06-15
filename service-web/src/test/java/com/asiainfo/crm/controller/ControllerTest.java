@@ -1,5 +1,6 @@
 package com.asiainfo.crm.controller;
 
+import com.ai.dbua.route.DataSourceContextHolder;
 import com.asiainfo.crm.ServiceApplication;
 import org.junit.Before;
 import org.junit.Test;
@@ -52,6 +53,7 @@ public class ControllerTest {
 
     @Test
     public void queryJdbcDemo() throws Exception {
+        DataSourceContextHolder.setDataSourceType("dataSource0");
         mvc.perform(MockMvcRequestBuilders
                 .get("/queryJdbcDemo")
                 .param("name","111"))

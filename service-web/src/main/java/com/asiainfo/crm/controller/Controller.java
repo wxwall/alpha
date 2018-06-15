@@ -66,7 +66,6 @@ public class Controller extends AbstractController {
     @RequestMapping(value = "/queryJdbcDemo" ,method = RequestMethod.GET)
     public RestResult<BusiModel> queryJdbcDemo(@ApiParam(name="name",value = "名称") @RequestParam(value = "name")String name){
         RestResult<BusiModel> restResult = new RestResult<BusiModel>();
-        DataSourceContextHolder.setDataSourceType("dataSource0");
         logger.debug(busiSMO.queryJdbcDemo(name));
         restResult.setMessage(busiSMO.queryJdbcDemo(name));
         return restResult;
