@@ -1,7 +1,6 @@
 package com.asiainfo.crm.config.common;
 
 import io.swagger.annotations.ApiOperation;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.async.DeferredResult;
@@ -11,15 +10,12 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @description: swagger2配置文件类
  * @访问路径： 如 http://localhost:8080/swagger-ui.html
  **/
 @Configuration
-@EnableSwagger2
-@ConfigurationProperties
 public class Swagger2Config {
 
     private String basePackage = "com.asiainfo.crm.controller";
@@ -41,9 +37,8 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("服务-接口")
-                .description("测试用swagger")
-                .contact("各微服务负责人")
+                .title("springboot利用swagger构建api文档")
+                .description("简单优雅的restfun风格")
                 .version("1.0")
                 .license("亚信科技")
                 .licenseUrl("http://www.asiainfo.com/")

@@ -10,7 +10,6 @@ import com.asiainfo.crm.common.controller.AbstractController;
 import com.asiainfo.crm.common.exception.BaseException;
 import com.asiainfo.crm.common.model.RestResult;
 import com.asiainfo.crm.multi.SoWebMultiSMO;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,6 @@ import java.util.Map;
 /**
  * Created by wuxiaowei on 2018/5/3
  */
-@Api(value="测试用Controller",tags={"一组操作实例"})
 @RestController
 public class Controller extends AbstractController {
 
