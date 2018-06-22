@@ -15,5 +15,6 @@
     <!--数据库源配置文件spring-context-db.xml-->
     <import resource="spring-context-db-jdbc.xml"></import>
 
+    <import resource="spring-context-cache.xml"></import>
 
 </beans>
