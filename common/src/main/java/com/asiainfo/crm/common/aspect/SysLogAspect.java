@@ -39,7 +39,7 @@ public class SysLogAspect {
 
 
 	@Around(value = "logPointCut()")
-	public void around(ProceedingJoinPoint joinPoint) throws  Throwable{
+	public Object around(ProceedingJoinPoint joinPoint) throws  Throwable{
 		MethodSignature signature = (MethodSignature) joinPoint.getSignature();
 		Method method = signature.getMethod();
 
@@ -75,7 +75,7 @@ public class SysLogAspect {
 		sysLog.setCreateDate(new Date());
 
 
-		joinPoint.proceed();
+		Object result = joinPoint.proceed();
 
 		//方法消耗时间
 		Long currentTime = System.currentTimeMillis() - beginTime;
@@ -87,6 +87,8 @@ public class SysLogAspect {
 		//保存系统日志
 		//sysLogService.save(sysLog);
 		logger.info(sysLog.toString());
+
+		return result;
 
 	}
 }
