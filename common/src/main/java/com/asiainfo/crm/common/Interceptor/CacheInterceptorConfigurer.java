@@ -19,17 +19,17 @@ import java.util.regex.Pattern;
  * Created by wuxiaowei on 2018/6/25
  */
 @SpringBootConfiguration
-public class CacheAppConfig extends WebMvcConfigurerAdapter {
+public class CacheInterceptorConfigurer extends WebMvcConfigurerAdapter {
 
     @Autowired
     RedisMDA redisMDA;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new CacheInterceptorConfig()).addPathPatterns(redisMDA.getPathPattern());
+        registry.addInterceptor(new CacheHandlerInterceptor()).addPathPatterns(redisMDA.getPathPattern());
     }
 
-    class CacheInterceptorConfig implements HandlerInterceptor{
+    class CacheHandlerInterceptor implements HandlerInterceptor{
 
         @Override
         public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
