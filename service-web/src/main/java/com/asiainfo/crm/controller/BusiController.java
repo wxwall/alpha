@@ -4,6 +4,7 @@ import com.asiainfo.crm.busi.BusiModel;
 import com.asiainfo.crm.busi.BusiSMO;
 import com.asiainfo.crm.common.controller.AbstractController;
 import com.asiainfo.crm.common.model.RestResult;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.List;
  * 单个restful风格的示例
  * Created by wuxiaowei on 2018/6/8
  */
+@Api("restful风格的示例")
 @RestController
 @RequestMapping(value="/busi")
 public class BusiController extends AbstractController {

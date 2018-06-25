@@ -5,5 +5,10 @@ BusiMDA:
   prodOfferName: abcd
 
 
+#对配置路径下的redis做拦截
+RedisMDA:
+  pathPattern: /cache/**
+
+
 
 
