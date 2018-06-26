@@ -8,7 +8,10 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractController {
 
-    protected Logger logger = LoggerFactory.getLogger(getClass());
+    /**
+     * transient: 防止Logger 对象被序列化，占用序列化开销
+     */
+    protected transient  Logger logger = LoggerFactory.getLogger(getClass());
 
 
 }
