@@ -1,6 +1,6 @@
 package com.asiainfo.crm.controller;
 
-import com.ai.dbua.route.DataSourceContextHolder;
+import com.ai.datasources.DataSourceContextHolder;
 import com.asiainfo.crm.ServiceApplication;
 import org.junit.Before;
 import org.junit.Test;
