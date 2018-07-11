@@ -34,8 +34,6 @@ public class CacheController extends AbstractController {
     @ApiOperation(value="插入demo",notes="插入缓存数据")
     @RequestMapping(value = "/insertCacheData" ,method = RequestMethod.POST)
     public RestResult insertCacheData(@ModelAttribute CacheForm cacheForm){
-
-
         cache.put(cacheForm.getCache_key(),cacheForm.getCache_value());
         RestResult restResult = new RestResult();
         restResult.setMessage(cache.get(cacheForm.getCache_key())+",success insert!!");

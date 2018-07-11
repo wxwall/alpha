@@ -17,8 +17,6 @@
         <module>service-web</module>
         <module>multi</module>
         <module>parent</module>
-        <module>busi</module>
-        <module>model</module>
     </modules>
 
 

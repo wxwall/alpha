@@ -49,6 +49,14 @@ feign:
   #hystrix调用fallback需要加此配置
   hystrix:
     enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            #feign调用超时时间，默认是1秒
+            timeoutInMilliseconds: 5000
 
 ctgmq:
    config:
