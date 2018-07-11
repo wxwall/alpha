@@ -3,18 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
-    <!--
-    <bean id="cacheImpl" class="com.ai.cache.impl.CacheImpl">
-        <constructor-arg type="java.lang.String" value="10.1.241.195"></constructor-arg>
-        <constructor-arg type="int" value="10421"></constructor-arg>
-        <constructor-arg type="java.lang.String" value="4g_cache#123456_a"></constructor-arg>
-    </bean>-->
-
-    <!--spring-context.xml是公共架构统一配置文件-->
-    <!--数据库源配置文件spring-context-db.xml-->
-    <import resource="spring-context-db-jdbc.xml"></import>
-
     <import resource="spring-context-cache.xml"></import>
 
 </beans>

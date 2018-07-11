@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.asiainfo.crm.busi.dao.MktResourceMapper" >
+  <resultMap id="BaseResultMap" type="com.asiainfo.crm.busi.MktResource" >
+    <id column="MKT_RES_ID" property="mktResId" jdbcType="DECIMAL" />
+    <result column="MKT_RES_NBR" property="mktResNbr" jdbcType="VARCHAR" />
+    <result column="MKT_RES_TYPE_ID" property="mktResTypeId" jdbcType="DECIMAL" />
+    <result column="MKT_RES_EXTTYPE_ID" property="mktResExttypeId" jdbcType="DECIMAL" />
+    <result column="MKT_MKT_RES_ID" property="mktMktResId" jdbcType="DECIMAL" />
+    <result column="MKT_RES_NAME" property="mktResName" jdbcType="VARCHAR" />
+    <result column="MKT_RES_DESC" property="mktResDesc" jdbcType="VARCHAR" />
+    <result column="MKT_PRICING_PLAN_ID" property="mktPricingPlanId" jdbcType="DECIMAL" />
+    <result column="UNIT" property="unit" jdbcType="VARCHAR" />
+    <result column="ORDERED_FLAG" property="orderedFlag" jdbcType="VARCHAR" />
+    <result column="MANAGE_REGION_ID" property="manageRegionId" jdbcType="DECIMAL" />
+    <result column="EFF_DATE" property="effDate" jdbcType="TIMESTAMP" />
+    <result column="EXP_DATE" property="expDate" jdbcType="TIMESTAMP" />
+    <result column="STATUS_DATE" property="statusDate" jdbcType="TIMESTAMP" />
+    <result column="STATUS_CD" property="statusCd" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="CREATE_STAFF" property="createStaff" jdbcType="DECIMAL" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="UPDATE_STAFF" property="updateStaff" jdbcType="DECIMAL" />
+    <result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="COST_PRICE" property="costPrice" jdbcType="DECIMAL" />
+    <result column="SALE_REFER_PRICE" property="saleReferPrice" jdbcType="DECIMAL" />
+    <result column="CONTRACT_PRICE" property="contractPrice" jdbcType="DECIMAL" />
+    <result column="IS_NEGATIVE" property="isNegative" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    MKT_RES_ID, MKT_RES_NBR, MKT_RES_TYPE_ID, MKT_RES_EXTTYPE_ID, MKT_MKT_RES_ID, MKT_RES_NAME, 
+    MKT_RES_DESC, MKT_PRICING_PLAN_ID, UNIT, ORDERED_FLAG, MANAGE_REGION_ID, EFF_DATE, 
+    EXP_DATE, STATUS_DATE, STATUS_CD, REMARK, CREATE_STAFF, CREATE_DATE, UPDATE_STAFF, 
+    UPDATE_DATE, COST_PRICE, SALE_REFER_PRICE, CONTRACT_PRICE, IS_NEGATIVE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from mkt_resource
+    where MKT_RES_ID = #{mktResId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from mkt_resource
+    where MKT_RES_ID = #{mktResId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.asiainfo.crm.busi.MktResource" >
+    insert into mkt_resource (MKT_RES_ID, MKT_RES_NBR, MKT_RES_TYPE_ID, 
+      MKT_RES_EXTTYPE_ID, MKT_MKT_RES_ID, MKT_RES_NAME, 
+      MKT_RES_DESC, MKT_PRICING_PLAN_ID, UNIT, 
+      ORDERED_FLAG, MANAGE_REGION_ID, EFF_DATE, 
+      EXP_DATE, STATUS_DATE, STATUS_CD, 
+      REMARK, CREATE_STAFF, CREATE_DATE, 
+      UPDATE_STAFF, UPDATE_DATE, COST_PRICE, 
+      SALE_REFER_PRICE, CONTRACT_PRICE, IS_NEGATIVE
+      )
+    values (#{mktResId,jdbcType=DECIMAL}, #{mktResNbr,jdbcType=VARCHAR}, #{mktResTypeId,jdbcType=DECIMAL}, 
+      #{mktResExttypeId,jdbcType=DECIMAL}, #{mktMktResId,jdbcType=DECIMAL}, #{mktResName,jdbcType=VARCHAR}, 
+      #{mktResDesc,jdbcType=VARCHAR}, #{mktPricingPlanId,jdbcType=DECIMAL}, #{unit,jdbcType=VARCHAR}, 
+      #{orderedFlag,jdbcType=VARCHAR}, #{manageRegionId,jdbcType=DECIMAL}, #{effDate,jdbcType=TIMESTAMP}, 
+      #{expDate,jdbcType=TIMESTAMP}, #{statusDate,jdbcType=TIMESTAMP}, #{statusCd,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{createStaff,jdbcType=DECIMAL}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{updateStaff,jdbcType=DECIMAL}, #{updateDate,jdbcType=TIMESTAMP}, #{costPrice,jdbcType=DECIMAL}, 
+      #{saleReferPrice,jdbcType=DECIMAL}, #{contractPrice,jdbcType=DECIMAL}, #{isNegative,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.asiainfo.crm.busi.MktResource" >
+    insert into mkt_resource
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mktResId != null" >
+        MKT_RES_ID,
+      </if>
+      <if test="mktResNbr != null" >
+        MKT_RES_NBR,
+      </if>
+      <if test="mktResTypeId != null" >
+        MKT_RES_TYPE_ID,
+      </if>
+      <if test="mktResExttypeId != null" >
+        MKT_RES_EXTTYPE_ID,
+      </if>
+      <if test="mktMktResId != null" >
+        MKT_MKT_RES_ID,
+      </if>
+      <if test="mktResName != null" >
+        MKT_RES_NAME,
+      </if>
+      <if test="mktResDesc != null" >
+        MKT_RES_DESC,
+      </if>
+      <if test="mktPricingPlanId != null" >
+        MKT_PRICING_PLAN_ID,
+      </if>
+      <if test="unit != null" >
+        UNIT,
+      </if>
+      <if test="orderedFlag != null" >
+        ORDERED_FLAG,
+      </if>
+      <if test="manageRegionId != null" >
+        MANAGE_REGION_ID,
+      </if>
+      <if test="effDate != null" >
+        EFF_DATE,
+      </if>
+      <if test="expDate != null" >
+        EXP_DATE,
+      </if>
+      <if test="statusDate != null" >
+        STATUS_DATE,
+      </if>
+      <if test="statusCd != null" >
+        STATUS_CD,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createStaff != null" >
+        CREATE_STAFF,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateStaff != null" >
+        UPDATE_STAFF,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+      <if test="costPrice != null" >
+        COST_PRICE,
+      </if>
+      <if test="saleReferPrice != null" >
+        SALE_REFER_PRICE,
+      </if>
+      <if test="contractPrice != null" >
+        CONTRACT_PRICE,
+      </if>
+      <if test="isNegative != null" >
+        IS_NEGATIVE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mktResId != null" >
+        #{mktResId,jdbcType=DECIMAL},
+      </if>
+      <if test="mktResNbr != null" >
+        #{mktResNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="mktResTypeId != null" >
+        #{mktResTypeId,jdbcType=DECIMAL},
+      </if>
+      <if test="mktResExttypeId != null" >
+        #{mktResExttypeId,jdbcType=DECIMAL},
+      </if>
+      <if test="mktMktResId != null" >
+        #{mktMktResId,jdbcType=DECIMAL},
+      </if>
+      <if test="mktResName != null" >
+        #{mktResName,jdbcType=VARCHAR},
+      </if>
+      <if test="mktResDesc != null" >
+        #{mktResDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="mktPricingPlanId != null" >
+        #{mktPricingPlanId,jdbcType=DECIMAL},
+      </if>
+      <if test="unit != null" >
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="orderedFlag != null" >
+        #{orderedFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="manageRegionId != null" >
+        #{manageRegionId,jdbcType=DECIMAL},
+      </if>
+      <if test="effDate != null" >
+        #{effDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expDate != null" >
+        #{expDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statusDate != null" >
+        #{statusDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statusCd != null" >
+        #{statusCd,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createStaff != null" >
+        #{createStaff,jdbcType=DECIMAL},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateStaff != null" >
+        #{updateStaff,jdbcType=DECIMAL},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="costPrice != null" >
+        #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="saleReferPrice != null" >
+        #{saleReferPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="contractPrice != null" >
+        #{contractPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="isNegative != null" >
+        #{isNegative,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.asiainfo.crm.busi.MktResource" >
+    update mkt_resource
+    <set >
+      <if test="mktResNbr != null" >
+        MKT_RES_NBR = #{mktResNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="mktResTypeId != null" >
+        MKT_RES_TYPE_ID = #{mktResTypeId,jdbcType=DECIMAL},
+      </if>
+      <if test="mktResExttypeId != null" >
+        MKT_RES_EXTTYPE_ID = #{mktResExttypeId,jdbcType=DECIMAL},
+      </if>
+      <if test="mktMktResId != null" >
+        MKT_MKT_RES_ID = #{mktMktResId,jdbcType=DECIMAL},
+      </if>
+      <if test="mktResName != null" >
+        MKT_RES_NAME = #{mktResName,jdbcType=VARCHAR},
+      </if>
+      <if test="mktResDesc != null" >
+        MKT_RES_DESC = #{mktResDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="mktPricingPlanId != null" >
+        MKT_PRICING_PLAN_ID = #{mktPricingPlanId,jdbcType=DECIMAL},
+      </if>
+      <if test="unit != null" >
+        UNIT = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="orderedFlag != null" >
+        ORDERED_FLAG = #{orderedFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="manageRegionId != null" >
+        MANAGE_REGION_ID = #{manageRegionId,jdbcType=DECIMAL},
+      </if>
+      <if test="effDate != null" >
+        EFF_DATE = #{effDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expDate != null" >
+        EXP_DATE = #{expDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statusDate != null" >
+        STATUS_DATE = #{statusDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statusCd != null" >
+        STATUS_CD = #{statusCd,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createStaff != null" >
+        CREATE_STAFF = #{createStaff,jdbcType=DECIMAL},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateStaff != null" >
+        UPDATE_STAFF = #{updateStaff,jdbcType=DECIMAL},
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="costPrice != null" >
+        COST_PRICE = #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="saleReferPrice != null" >
+        SALE_REFER_PRICE = #{saleReferPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="contractPrice != null" >
+        CONTRACT_PRICE = #{contractPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="isNegative != null" >
+        IS_NEGATIVE = #{isNegative,jdbcType=CHAR},
+      </if>
+    </set>
+    where MKT_RES_ID = #{mktResId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.asiainfo.crm.busi.MktResource" >
+    update mkt_resource
+    set MKT_RES_NBR = #{mktResNbr,jdbcType=VARCHAR},
+      MKT_RES_TYPE_ID = #{mktResTypeId,jdbcType=DECIMAL},
+      MKT_RES_EXTTYPE_ID = #{mktResExttypeId,jdbcType=DECIMAL},
+      MKT_MKT_RES_ID = #{mktMktResId,jdbcType=DECIMAL},
+      MKT_RES_NAME = #{mktResName,jdbcType=VARCHAR},
+      MKT_RES_DESC = #{mktResDesc,jdbcType=VARCHAR},
+      MKT_PRICING_PLAN_ID = #{mktPricingPlanId,jdbcType=DECIMAL},
+      UNIT = #{unit,jdbcType=VARCHAR},
+      ORDERED_FLAG = #{orderedFlag,jdbcType=VARCHAR},
+      MANAGE_REGION_ID = #{manageRegionId,jdbcType=DECIMAL},
+      EFF_DATE = #{effDate,jdbcType=TIMESTAMP},
+      EXP_DATE = #{expDate,jdbcType=TIMESTAMP},
+      STATUS_DATE = #{statusDate,jdbcType=TIMESTAMP},
+      STATUS_CD = #{statusCd,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      CREATE_STAFF = #{createStaff,jdbcType=DECIMAL},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      UPDATE_STAFF = #{updateStaff,jdbcType=DECIMAL},
+      UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      COST_PRICE = #{costPrice,jdbcType=DECIMAL},
+      SALE_REFER_PRICE = #{saleReferPrice,jdbcType=DECIMAL},
+      CONTRACT_PRICE = #{contractPrice,jdbcType=DECIMAL},
+      IS_NEGATIVE = #{isNegative,jdbcType=CHAR}
+    where MKT_RES_ID = #{mktResId,jdbcType=DECIMAL}
+  </update>
+</mapper>

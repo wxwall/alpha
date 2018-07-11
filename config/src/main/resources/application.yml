@@ -10,12 +10,6 @@ spring:
   #激活的配置文件
   profiles:
     active: test
-  #数据库
-  datasource:
-      url: jdbc:mysql://10.128.91.198:3306/springcloud?createDatabaseIfNotExist=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true
-      username: root
-      password: zaq1XSW2
-      driver-class-name: com.mysql.jdbc.Driver
   #spring-boot-admin注册地址
   boot:
     admin:
@@ -38,7 +32,7 @@ management:
     enabled: false
 
 mybatis:
-    mapperLocations: classpath:mappers/*.xml
+    mapperLocations: classpath:com/asiainfo/crm/busi/dao/*.xml
 
 logback:
   logdir: logs
@@ -59,3 +53,9 @@ ctgmq:
      producerGroupName: product_hs
 
 
+#自己根据应用配置的appid修改
+app.id: 100003174
+# apollo 环境分类
+env: DEV
+#apollo 本地缓存配置文件目录
+apollo.cacheroot: D:\apollo\data

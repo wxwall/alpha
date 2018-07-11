@@ -9,6 +9,37 @@ BusiMDA:
 RedisMDA:
   pathPattern: /cache/**
 
-
-
-
+# UDAL配置数据节点
+ctgudal:
+  datasource:
+  #数据源列表ds1,ds2,ds3
+    names: ds1,ds2
+    ds1:
+      type: jdbc
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://10.128.91.222:8866/testschema1?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000
+      username: dpuser1
+      password: Asiainfo@123
+      maxActive: 20
+      minIdle: 2
+      initialSize: 2
+    ds2:
+      type: jdbc
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://10.128.91.222:8866/testschema2?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000
+      username: dpuser1
+      password: Asiainfo@123
+    ds3:
+      type: jndi
+      jndiName: java:comp/env/jdbc/mysql/yxzy
+  config:
+    #事物拦截SMO层的bean名称匹配
+    #beanNames: *SMO,*SMOImpl,*Service,*ServiceImpl
+    #事物拦截SMO层的方法名称匹配
+    methods:
+      get*: PROPAGATION_REQUIRED,-Exception,readOnly
+      query*: PROPAGATION_REQUIRED
+      add*: PROPAGATION_REQUIRED
+      save*: PROPAGATION_REQUIRED
+      update*: PROPAGATION_REQUIRED
+      delete*: PROPAGATION_REQUIRED

@@ -1,15 +1,19 @@
 package com.asiainfo.crm.controller;
 
-import com.ai.dbua.route.DataSourceContextHolder;
+import com.ai.datasources.DataSourceContextHolder;
+import com.ai.hint.HintContextHolder;
 import com.asiainfo.crm.busi.BusiModel;
 import com.asiainfo.crm.busi.BusiSMO;
+import com.asiainfo.crm.busi.MktResource;
 import com.asiainfo.crm.busi.service.CtgMqInterface;
 import com.asiainfo.crm.busi.service.ICustQuerySMO;
+import com.asiainfo.crm.busi.service.MktResourceSMO;
 import com.asiainfo.crm.common.annotation.SysLog;
 import com.asiainfo.crm.common.controller.AbstractController;
 import com.asiainfo.crm.common.exception.BaseException;
 import com.asiainfo.crm.common.model.RestResult;
 import com.asiainfo.crm.multi.SoWebMultiSMO;
+import com.github.pagehelper.PageHelper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -36,6 +40,8 @@ public class Controller extends AbstractController {
     CtgMqInterface ctgMqInterface;
     @Autowired
     SoWebMultiSMO soWebMultiSMO;
+    @Autowired
+    MktResourceSMO mktResourceSMO;
 
     @SysLog
     @ApiOperation(value="查询Demo",notes="用来查看服务是否正常启动")
@@ -104,10 +110,11 @@ public class Controller extends AbstractController {
     @RequestMapping(value = "/queryProdInstById" ,method = RequestMethod.POST)
     public String queryProdInstById(){
         HashMap<String, Object> map = new HashMap<>();
-        map.put("employeeId",1111);
-        DataSourceContextHolder.setDataSourceType("dataSource0");
+        map.put("employeeId",1);
+        DataSourceContextHolder.setDataSourceType("ds1");
+        Map inst = null;
         try{
-            Map inst = custQuerySMO.queryProdInstByCond(map);
+            inst = custQuerySMO.queryProdInstByCond(map);
         }catch (Exception e) {
             e.printStackTrace();
         }finally{
@@ -144,6 +151,19 @@ public class Controller extends AbstractController {
     public RestResult queryOrderListInfoByCustomerOrderId(@RequestBody String jsonParam){
         RestResult restResult = soWebMultiSMO.queryOrderListInfoByCustomerOrderId(jsonParam);
         return restResult;
+    }
+
+    @ApiOperation(value="测试UDAL启动器",notes="udal启动器数据源路由hint路由测试")
+    @RequestMapping(value = "/testudamhint" ,method = RequestMethod.GET)
+    public String testJndi() {
+        DataSourceContextHolder.setDataSourceType("ds2");
+        HintContextHolder.setHintOfSelectSql("/* !HINT({\"balance\":\"2\"})*/");
+        PageHelper.offsetPage(0,2);
+        MktResource mktResource = mktResourceSMO.getMktResourceById(1);
+        if(mktResource==null){
+            return "null";
+        }
+        return mktResource.toString();
     }
 
 }
