@@ -38,7 +38,7 @@ ctgudal:
     #事物拦截SMO层的方法名称匹配
     methods:
       get*: PROPAGATION_REQUIRED,-Exception,readOnly
-      query*: PROPAGATION_REQUIRED
+      query*: PROPAGATION_REQUIRED,-Exception,readOnly
       add*: PROPAGATION_REQUIRED
       save*: PROPAGATION_REQUIRED
       update*: PROPAGATION_REQUIRED
