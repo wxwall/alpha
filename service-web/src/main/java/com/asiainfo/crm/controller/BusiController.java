@@ -1,7 +1,7 @@
 package com.asiainfo.crm.controller;
 
 import com.asiainfo.crm.busi.BusiModel;
-import com.asiainfo.crm.busi.BusiSMO;
+import com.asiainfo.crm.busi.service.BusiSMO;
 import com.asiainfo.crm.common.controller.AbstractController;
 import com.asiainfo.crm.common.model.RestResult;
 import io.swagger.annotations.Api;

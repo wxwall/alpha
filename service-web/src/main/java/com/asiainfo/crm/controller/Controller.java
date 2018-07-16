@@ -3,7 +3,7 @@ package com.asiainfo.crm.controller;
 import com.ai.datasources.DataSourceContextHolder;
 import com.ai.hint.HintContextHolder;
 import com.asiainfo.crm.busi.BusiModel;
-import com.asiainfo.crm.busi.BusiSMO;
+import com.asiainfo.crm.busi.service.BusiSMO;
 import com.asiainfo.crm.busi.MktResource;
 import com.asiainfo.crm.busi.service.CtgMqInterface;
 import com.asiainfo.crm.busi.service.ICustQuerySMO;
@@ -165,5 +165,10 @@ public class Controller extends AbstractController {
         }
         return mktResource.toString();
     }
+
+
+
+
+
 
 }

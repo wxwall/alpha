@@ -34,7 +34,7 @@ ctgudal:
       jndiName: java:comp/env/jdbc/mysql/yxzy
   config:
     #事物拦截SMO层的bean名称匹配
-    #beanNames: *SMO,*SMOImpl,*Service,*ServiceImpl
+    beanNames: "*SMO,*SMOImpl,*Service,*ServiceImpl"
     #事物拦截SMO层的方法名称匹配
     methods:
       get*: PROPAGATION_REQUIRED,-Exception,readOnly

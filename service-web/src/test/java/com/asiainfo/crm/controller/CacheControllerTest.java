@@ -93,7 +93,7 @@ public class CacheControllerTest {
         assertFalse(cache.putIfNotExists("aa", "11"));
         final boolean gg = cache.putIfNotExists("gg", "11");
         System.out.println(gg);
-        assertTrue(cache.putIfNotExists("gg","11"));
+        assertFalse(cache.putIfNotExists("gg","11"));
     }
 
     @Test

@@ -133,6 +133,7 @@
 					<commands>
 						<command>/app/sc/service-web/service-web-01/run.sh restart</command>
 					</commands>
+					<displayCommandOutputs>true</displayCommandOutputs>
 				</configuration>
 			</plugin>
 		</plugins>
