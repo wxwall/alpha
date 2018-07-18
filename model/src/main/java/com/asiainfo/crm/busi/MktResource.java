@@ -3,142 +3,102 @@ package com.asiainfo.crm.busi;
 import java.util.Date;
 
 public class MktResource {
-    private Integer mktResId;
+    private Integer mkt_Res_Id;
 
-    private String mktResNbr;
+    private String mkt_Res_Nbr;
 
-	private Integer mktResTypeId;
+	private Integer mkt_Res_Type_Id;
 
-    private Integer mktResExttypeId;
+    private Integer mkt_ResExt_type_Id;
 
-    private Long mktMktResId;
+    private Long mkt_Mkt_Res_Id;
 
-    private String mktResName;
+    private String mkt_Res_Name;
 
-    private String mktResDesc;
+    private String mkt_Res_Desc;
 
-    private Integer mktPricingPlanId;
+    private Integer mkt_Pricing_Plan_Id;
 
     private String unit;
 
-    private String orderedFlag;
+    private String ordered_Flag;
 
-    private Long manageRegionId;
+    private Long manage_RegionId;
 
-    private Date effDate;
+    private Date eff_Date;
 
-    private Date expDate;
+    private Date exp_Date;
 
-    private Date statusDate;
+    private Date status_Date;
 
-    private String statusCd;
+    private String status_Cd;
 
 
 
-    private String costPrice;
+    private String cost_Price;
 
-    public String getSaleReferPrice() {
-        return saleReferPrice;
+    public Integer getMkt_Res_Id() {
+        return mkt_Res_Id;
     }
 
-    public void setSaleReferPrice(String saleReferPrice) {
-        this.saleReferPrice = saleReferPrice;
+    public void setMkt_Res_Id(Integer mkt_Res_Id) {
+        this.mkt_Res_Id = mkt_Res_Id;
     }
 
-    public String getContractPrice() {
-        return contractPrice;
+    public String getMkt_Res_Nbr() {
+        return mkt_Res_Nbr;
     }
 
-    public void setContractPrice(String contractPrice) {
-        this.contractPrice = contractPrice;
+    public void setMkt_Res_Nbr(String mkt_Res_Nbr) {
+        this.mkt_Res_Nbr = mkt_Res_Nbr;
     }
 
-    public String getIsNegative() {
-        return isNegative;
+    public Integer getMkt_Res_Type_Id() {
+        return mkt_Res_Type_Id;
     }
 
-    public void setIsNegative(String isNegative) {
-        this.isNegative = isNegative;
+    public void setMkt_Res_Type_Id(Integer mkt_Res_Type_Id) {
+        this.mkt_Res_Type_Id = mkt_Res_Type_Id;
     }
 
-    private String saleReferPrice;
-
-    private String contractPrice;
-
-    private String isNegative;
-
-    private String remark;
-
-    private Long createStaff;
-
-    private Date createDate;
-
-    private Long updateStaff;
-
-    private Date updateDate;
-
-    public Integer getMktResId() {
-        return mktResId;
+    public Integer getMkt_ResExt_type_Id() {
+        return mkt_ResExt_type_Id;
     }
 
-    public void setMktResId(Integer mktResId) {
-        this.mktResId = mktResId;
+    public void setMkt_ResExt_type_Id(Integer mkt_ResExt_type_Id) {
+        this.mkt_ResExt_type_Id = mkt_ResExt_type_Id;
     }
 
-    public String getMktResNbr() {
-        return mktResNbr;
+    public Long getMkt_Mkt_Res_Id() {
+        return mkt_Mkt_Res_Id;
     }
 
-    public void setMktResNbr(String mktResNbr) {
-        this.mktResNbr = mktResNbr;
+    public void setMkt_Mkt_Res_Id(Long mkt_Mkt_Res_Id) {
+        this.mkt_Mkt_Res_Id = mkt_Mkt_Res_Id;
     }
 
-    public Integer getMktResTypeId() {
-        return mktResTypeId;
+    public String getMkt_Res_Name() {
+        return mkt_Res_Name;
     }
 
-    public void setMktResTypeId(Integer mktResTypeId) {
-        this.mktResTypeId = mktResTypeId;
+    public void setMkt_Res_Name(String mkt_Res_Name) {
+        this.mkt_Res_Name = mkt_Res_Name;
     }
 
-    public Integer getMktResExttypeId() {
-        return mktResExttypeId;
+    public String getMkt_Res_Desc() {
+        return mkt_Res_Desc;
     }
 
-    public void setMktResExttypeId(Integer mktResExttypeId) {
-        this.mktResExttypeId = mktResExttypeId;
+    public void setMkt_Res_Desc(String mkt_Res_Desc) {
+        this.mkt_Res_Desc = mkt_Res_Desc;
     }
 
-    public Long getMktMktResId() {
-        return mktMktResId;
+    public Integer getMkt_Pricing_Plan_Id() {
+        return mkt_Pricing_Plan_Id;
     }
 
-    public void setMktMktResId(Long mktMktResId) {
-        this.mktMktResId = mktMktResId;
-    }
-
-    public String getMktResName() {
-        return mktResName;
-    }
-
-    public void setMktResName(String mktResName) {
-        this.mktResName = mktResName;
-    }
-
-    public String getMktResDesc() {
-        return mktResDesc;
-    }
-
-    public void setMktResDesc(String mktResDesc) {
-        this.mktResDesc = mktResDesc;
-    }
-
-    public Integer getMktPricingPlanId() {
-        return mktPricingPlanId;
-    }
-
-    public void setMktPricingPlanId(Integer mktPricingPlanId) {
-        this.mktPricingPlanId = mktPricingPlanId;
+    public void setMkt_Pricing_Plan_Id(Integer mkt_Pricing_Plan_Id) {
+        this.mkt_Pricing_Plan_Id = mkt_Pricing_Plan_Id;
     }
 
     public String getUnit() {
@@ -149,109 +109,82 @@ public class MktResource {
         this.unit = unit;
     }
 
-    public String getOrderedFlag() {
-        return orderedFlag;
+    public String getOrdered_Flag() {
+        return ordered_Flag;
     }
 
-    public void setOrderedFlag(String orderedFlag) {
-        this.orderedFlag = orderedFlag;
+    public void setOrdered_Flag(String ordered_Flag) {
+        this.ordered_Flag = ordered_Flag;
     }
 
-    public Long getManageRegionId() {
-        return manageRegionId;
+    public Long getManage_RegionId() {
+        return manage_RegionId;
     }
 
-    public void setManageRegionId(Long manageRegionId) {
-        this.manageRegionId = manageRegionId;
+    public void setManage_RegionId(Long manage_RegionId) {
+        this.manage_RegionId = manage_RegionId;
     }
 
-    public Date getEffDate() {
-        return effDate;
+    public Date getEff_Date() {
+        return eff_Date;
     }
 
-    public void setEffDate(Date effDate) {
-        this.effDate = effDate;
+    public void setEff_Date(Date eff_Date) {
+        this.eff_Date = eff_Date;
     }
 
-    public Date getExpDate() {
-        return expDate;
+    public Date getExp_Date() {
+        return exp_Date;
     }
 
-    public void setExpDate(Date expDate) {
-        this.expDate = expDate;
+    public void setExp_Date(Date exp_Date) {
+        this.exp_Date = exp_Date;
     }
 
-    public Date getStatusDate() {
-        return statusDate;
+    public Date getStatus_Date() {
+        return status_Date;
     }
 
-    public void setStatusDate(Date statusDate) {
-        this.statusDate = statusDate;
+    public void setStatus_Date(Date status_Date) {
+        this.status_Date = status_Date;
     }
 
-    public String getStatusCd() {
-        return statusCd;
+    public String getStatus_Cd() {
+        return status_Cd;
     }
 
-    public void setStatusCd(String statusCd) {
-        this.statusCd = statusCd;
+    public void setStatus_Cd(String status_Cd) {
+        this.status_Cd = status_Cd;
     }
 
-    public String getRemark() {
-        return remark;
+    public String getCost_Price() {
+        return cost_Price;
     }
 
-    public void setRemark(String remark) {
-        this.remark = remark;
+    public void setCost_Price(String cost_Price) {
+        this.cost_Price = cost_Price;
     }
 
-    public Long getCreateStaff() {
-        return createStaff;
-    }
 
-    public void setCreateStaff(Long createStaff) {
-        this.createStaff = createStaff;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    public Long getUpdateStaff() {
-        return updateStaff;
-    }
-
-    public void setUpdateStaff(Long updateStaff) {
-        this.updateStaff = updateStaff;
-    }
-
-    public Date getUpdateDate() {
-        return updateDate;
-    }
-
-    public void setUpdateDate(Date updateDate) {
-        this.updateDate = updateDate;
-    }
-
-    public String getCostPrice() {
-        return costPrice;
-    }
-
-    public void setCostPrice(String costPrice) {
-        this.costPrice = costPrice;
-    }
     @Override
-   	public String toString() {
-   		return "MktResource [mktResId=" + mktResId + ", mktResNbr=" + mktResNbr + ", mktResTypeId=" + mktResTypeId
-   				+ ", mktResExttypeId=" + mktResExttypeId + ", mktMktResId=" + mktMktResId + ", mktResName=" + mktResName
-   				+ ", mktResDesc=" + mktResDesc + ", mktPricingPlanId=" + mktPricingPlanId + ", unit=" + unit
-   				+ ", orderedFlag=" + orderedFlag + ", manageRegionId=" + manageRegionId + ", effDate=" + effDate
-   				+ ", expDate=" + expDate + ", statusDate=" + statusDate + ", statusCd=" + statusCd + ", remark="
-   				+ remark + ", createStaff=" + createStaff + ", createDate=" + createDate + ", updateStaff="
-   				+ updateStaff + ", updateDate=" + updateDate + "]";
-   	}
+    public String toString() {
+        return "MktResource{" +
+                "mkt_Res_Id=" + mkt_Res_Id +
+                ", mkt_Res_Nbr='" + mkt_Res_Nbr + '\'' +
+                ", mkt_Res_Type_Id=" + mkt_Res_Type_Id +
+                ", mkt_ResExt_type_Id=" + mkt_ResExt_type_Id +
+                ", mkt_Mkt_Res_Id=" + mkt_Mkt_Res_Id +
+                ", mkt_Res_Name='" + mkt_Res_Name + '\'' +
+                ", mkt_Res_Desc='" + mkt_Res_Desc + '\'' +
+                ", mkt_Pricing_Plan_Id=" + mkt_Pricing_Plan_Id +
+                ", unit='" + unit + '\'' +
+                ", ordered_Flag='" + ordered_Flag + '\'' +
+                ", manage_RegionId=" + manage_RegionId +
+                ", eff_Date=" + eff_Date +
+                ", exp_Date=" + exp_Date +
+                ", status_Date=" + status_Date +
+                ", status_Cd='" + status_Cd + '\'' +
+                ", cost_Price='" + cost_Price + '\'' +
+                '}';
+    }
 }

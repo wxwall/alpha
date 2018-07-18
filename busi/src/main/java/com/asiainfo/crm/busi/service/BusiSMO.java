@@ -1,5 +1,6 @@
-package com.asiainfo.crm.busi;
+package com.asiainfo.crm.busi.service;
 
+import com.asiainfo.crm.busi.BusiModel;
 import com.asiainfo.crm.common.model.RestResult;
 
 import java.util.List;

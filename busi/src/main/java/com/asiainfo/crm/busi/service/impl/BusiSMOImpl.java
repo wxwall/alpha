@@ -1,8 +1,8 @@
-package com.asiainfo.crm.busi.impl;
+package com.asiainfo.crm.busi.service.impl;
 
 import com.asiainfo.crm.busi.ApolloMDA;
 import com.asiainfo.crm.busi.BusiMDA;
-import com.asiainfo.crm.busi.BusiSMO;
+import com.asiainfo.crm.busi.service.BusiSMO;
 import com.asiainfo.crm.busi.BusiModel;
 import com.asiainfo.crm.busi.dao.BusiDao;
 import com.asiainfo.crm.common.model.RestResult;

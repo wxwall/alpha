@@ -20,6 +20,23 @@ public class MktResourceSMOImpl implements MktResourceSMO {
     }
 
     @Override
+    public int updateMktResource(List<String> mktResNbr) {
+        int mktResource = mktResourceMapper.updateMktResource(mktResNbr);
+        System.out.println(mktResource);
+        return 0;
+    }
+
+    @Override
+    public List<MktResource> getMktResourceList() {
+        return mktResourceMapper.getMktResourceList();
+    }
+
+    @Override
+    public MktResource getMktResource(Long id) {
+        return mktResourceMapper.getMktResource(id);
+    }
+
+    @Override
     public int insertMktResources(List<MktResource> records) {
         mktResourceMapper.insert(records.get(0));
         mktResourceMapper.insert(records.get(1));
