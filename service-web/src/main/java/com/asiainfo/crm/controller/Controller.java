@@ -194,4 +194,15 @@ public class Controller extends AbstractController {
         mktResource.setMktResName("查询后修改一下ID"+id);
         return mktResource;
     };
+
+    @ApiOperation(value="测试事务提交",notes="测试事务的正常、异常提交情况")
+    @RequestMapping(value = "/testTransaction" ,method = RequestMethod.GET)
+    public String testTransaction() {
+        DataSourceContextHolder.setDataSourceType("ds2");
+        List<MktResource> mktList = new ArrayList<>();
+        mktList.add(instancMktResource(1012));
+        mktList.add(instancMktResource(1013));
+        mktResourceSMO.insertMktResources(mktList);
+        return "";
+    }
 }

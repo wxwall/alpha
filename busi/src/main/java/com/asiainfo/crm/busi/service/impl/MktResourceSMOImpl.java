@@ -38,8 +38,12 @@ public class MktResourceSMOImpl implements MktResourceSMO {
 
     @Override
     public int insertMktResources(List<MktResource> records) {
+        mktResourceMapper.udalDtStart();
         mktResourceMapper.insert(records.get(0));
         mktResourceMapper.insert(records.get(1));
+        //int i=1/0;//制造异常事务回滚
+        mktResourceMapper.updateMktMktResourceById(records.get(0).getMktResId());
+        mktResourceMapper.updateMktMktResourceById(records.get(1).getMktResId());
         return 0;
     }
 
