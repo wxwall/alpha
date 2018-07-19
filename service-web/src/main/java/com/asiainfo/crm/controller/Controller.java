@@ -200,8 +200,8 @@ public class Controller extends AbstractController {
     public String testTransaction() {
         DataSourceContextHolder.setDataSourceType("ds2");
         List<MktResource> mktList = new ArrayList<>();
-        mktList.add(instancMktResource(1012));
-        mktList.add(instancMktResource(1013));
+        mktList.add(instancMktResource(1022));
+        mktList.add(instancMktResource(1023));
         mktResourceSMO.insertMktResources(mktList);
         return "";
     }
