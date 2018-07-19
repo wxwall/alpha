@@ -43,3 +43,5 @@ ctgudal:
       save*: PROPAGATION_REQUIRED
       update*: PROPAGATION_REQUIRED
       delete*: PROPAGATION_REQUIRED
+      insert*: PROPAGATION_REQUIRED
+      sequence*: PROPAGATION_REQUIRES_NEW

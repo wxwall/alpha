@@ -3,8 +3,8 @@ package com.asiainfo.crm.controller;
 import com.ai.datasources.DataSourceContextHolder;
 import com.ai.hint.HintContextHolder;
 import com.asiainfo.crm.busi.BusiModel;
-import com.asiainfo.crm.busi.service.BusiSMO;
 import com.asiainfo.crm.busi.MktResource;
+import com.asiainfo.crm.busi.service.BusiSMO;
 import com.asiainfo.crm.busi.service.CtgMqInterface;
 import com.asiainfo.crm.busi.service.ICustQuerySMO;
 import com.asiainfo.crm.busi.service.MktResourceSMO;
@@ -20,7 +20,9 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -166,9 +168,41 @@ public class Controller extends AbstractController {
         return mktResource.toString();
     }
 
+    @ApiOperation(value="测试UDAL多分片单条插入",notes="测试单条插入没问题")
+    @RequestMapping(value = "/testudaldtstart" ,method = RequestMethod.GET)
+    public String testudaldtstart() {
+        DataSourceContextHolder.setDataSourceType("ds2");
+        List<MktResource> mktList = new ArrayList<>();
+        mktList.add(instancMktResource(1000));
+        mktList.add(instancMktResource(1001));
+        mktResourceSMO.insertMktResources(mktList);
+        return "";
+    }
 
+    @ApiOperation(value="测试UDAL多分片批量修改",notes="待测试")
+    @RequestMapping(value = "/testupdatemulti" ,method = RequestMethod.GET)
+    public String testupdatemulti() {
+        DataSourceContextHolder.setDataSourceType("ds2");
+        mktResourceSMO.updateMktResources();
+        mktResourceSMO.updateMktResourcesWithOutDtStart();
+        return "";
+    }
 
+    private MktResource instancMktResource(Integer id){
+        MktResource mktResource = mktResourceSMO.getMktResourceById(1);
+        mktResource.setMktResId(id);
+        mktResource.setMktResName("查询后修改一下ID"+id);
+        return mktResource;
+    };
 
-
-
+    @ApiOperation(value="测试事务提交",notes="测试事务的正常、异常提交情况")
+    @RequestMapping(value = "/testTransaction" ,method = RequestMethod.GET)
+    public String testTransaction() {
+        DataSourceContextHolder.setDataSourceType("ds2");
+        List<MktResource> mktList = new ArrayList<>();
+        mktList.add(instancMktResource(1022));
+        mktList.add(instancMktResource(1023));
+        mktResourceSMO.insertMktResources(mktList);
+        return "";
+    }
 }

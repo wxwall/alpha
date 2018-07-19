@@ -16,4 +16,10 @@ public interface MktResourceSMO {
     List<MktResource> getMktResourceList();
 
     MktResource getMktResource(Long id);
+
+    public int insertMktResources(List<MktResource> records);
+
+    public int updateMktResources();
+
+    public int updateMktResourcesWithOutDtStart();
 }
