@@ -33,11 +33,15 @@ ctgudal:
       type: jndi
       jndiName: java:comp/env/jdbc/mysql/yxzy
   config:
+    #分片事务开关：true 开启
+    startUdalDt: true
+    #分片事务拦截方法。在 methods基础上，进一步精确拦截
+    startUdalDtMethod: "*Start"
     #事物拦截SMO层的bean名称匹配
-    beanNames: "*SMO,*SMOImpl,*Service,*ServiceImpl"
+    beanNames: "*SMO,*SMOImpl"
     #事物拦截SMO层的方法名称匹配
     methods:
-      get*: PROPAGATION_REQUIRED,-Exception,readOnly
+      #get*: PROPAGATION_REQUIRED,-Exception,readOnly
       query*: PROPAGATION_REQUIRED,-Exception,readOnly
       add*: PROPAGATION_REQUIRED
       save*: PROPAGATION_REQUIRED

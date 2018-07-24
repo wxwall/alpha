@@ -2,6 +2,7 @@ package com.asiainfo.crm.busi.service;
 
 
 import com.asiainfo.crm.busi.MktResource;
+import com.sun.tools.javadoc.Start;
 
 import java.util.List;
 
@@ -22,4 +23,10 @@ public interface MktResourceSMO {
     public int updateMktResources();
 
     public int updateMktResourcesWithOutDtStart();
+
+    public int insertMktResourcesWithOutDt(List<MktResource> records);
+
+    public int insertMktResourcesStart(List<MktResource> records);
+
+
 }

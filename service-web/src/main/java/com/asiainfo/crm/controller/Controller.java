@@ -205,4 +205,15 @@ public class Controller extends AbstractController {
         mktResourceSMO.insertMktResources(mktList);
         return "";
     }
+
+    @ApiOperation(value="测试分片事务拦截器",notes="测试分片事务拦截器是否成功")
+    @RequestMapping(value = "/testUdalDtStartInterceptor" ,method = RequestMethod.GET)
+    public String testUdalDtStartInterceptor() {
+        DataSourceContextHolder.setDataSourceType("ds2");
+        List<MktResource> mktList = new ArrayList<>();
+        mktList.add(instancMktResource(1037));
+        mktList.add(instancMktResource(1038));
+        mktResourceSMO.insertMktResourcesStart(mktList);
+        return "";
+    }
 }

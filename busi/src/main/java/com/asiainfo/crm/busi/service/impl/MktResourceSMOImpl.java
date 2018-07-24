@@ -55,6 +55,15 @@ public class MktResourceSMOImpl implements MktResourceSMO {
     }
 
     @Override
+    public int insertMktResourcesWithOutDt(List<MktResource> records) {
+        mktResourceMapper.insert(records.get(0));
+        mktResourceMapper.insert(records.get(1));
+        mktResourceMapper.updateMktMktResourceById(records.get(0).getMktResId());
+        mktResourceMapper.updateMktMktResourceById(records.get(1).getMktResId());
+        return 0;
+    }
+
+    @Override
     public int updateMktResources() {
         mktResourceMapper.udalDtStart();
         return mktResourceMapper.updateMktMktResource();
@@ -79,5 +88,9 @@ public class MktResourceSMOImpl implements MktResourceSMO {
         List<Long> seqTest = sequenceSMO.sequenceByNameAndNum(seqName, 5);
         DataSourceContextHolder.setDataSourceType(dataSourceType);
         return seqTest;
+    }
+
+    public int insertMktResourcesStart(List<MktResource> records){
+        return insertMktResourcesWithOutDt(records);
     }
 }
