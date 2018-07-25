@@ -26,4 +26,27 @@ public class MonitorControllerTest extends AbstractTest {
                 .andDo(print());
     }
 
+    @Test
+    public void querySeq18() throws Exception {
+        for (int i = 0; i < 3; i++) {
+            mvc.perform(MockMvcRequestBuilders
+                    .get("/monitor/querySeq18"))
+                    .andExpect(status().isOk())
+                    .andDo(print());
+        }
+    }
+
+    @Test
+    public void querySeq16() throws Exception {
+        for (int i = 0; i < 3; i++){
+            mvc.perform(MockMvcRequestBuilders
+                    .get("/monitor/querySeq16"))
+                    .andExpect(status().isOk())
+                    .andDo(print());
+        }
+
+    }
+
+
+
 }
