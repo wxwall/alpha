@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Restful
  * 对分布式数据库的基本操作(mktResource表)
- * 注意：数据源选择到时候根据业务需求统一放到aop中处理
+ * 注意：数据源选择目前不在此
  * Created by wuxiaowei on 2018/7/16
  */
 @RestController
@@ -42,7 +42,7 @@ public class JdbcController {
     }
 
 
-    @ApiOperation(value="处理\"/jdbc/\"的GET请求", notes="查询所有的返回值")
+    @ApiOperation(value="处理\"/jdbc/\"的GUT请求", notes="查询所有的返回值")
     @RequestMapping(value="/", method= RequestMethod.GET)
     public RestResult getMktResource() {
         DataSourceContextHolder.setDataSourceType("ds2");
@@ -52,7 +52,7 @@ public class JdbcController {
         return restResult;
     }
 
-    @ApiOperation(value="处理\"/jdbc/{id}\"的GET请求", notes="查询id对应的值")
+    @ApiOperation(value="处理\"/jdbc/{id}\"的GUT请求", notes="查询id对应的值")
     @RequestMapping(value="/{id}", method= RequestMethod.GET)
     public RestResult getMktResourceById(@PathVariable Long id) {
         DataSourceContextHolder.setDataSourceType("ds2");

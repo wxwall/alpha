@@ -1,15 +1,12 @@
 package com.asiainfo.crm.busi.dao;
 
 import com.asiainfo.crm.busi.MktResource;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface MktResourceMapper {
@@ -30,7 +27,8 @@ public interface MktResourceMapper {
      * 用注解方式
      */
     @Update({"<script>" +
-            "update mkt_resource i set i.MKT_RES_NAME = '小白' WHERE i.mkt_res_id in " +
+            //"udal dt start;" +
+            "update mkt_resource i set i.MKT_RES_NAME = '小王' WHERE i.mkt_res_id in " +
             "<foreach item='item' index='index' collection='mktResNbr' open='(' separator=',' close=')'>" +
             "#{item}" +
             "</foreach>" +

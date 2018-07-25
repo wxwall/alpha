@@ -3,7 +3,6 @@ package com.asiainfo.crm.busi.service.impl;
 import com.ai.datasources.DataSourceContextHolder;
 import com.asiainfo.crm.busi.MktResource;
 import com.asiainfo.crm.busi.dao.MktResourceMapper;
-import com.asiainfo.crm.busi.dao.SequenceDao;
 import com.asiainfo.crm.busi.service.MktResourceSMO;
 import com.asiainfo.crm.busi.service.SequenceSMO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +25,8 @@ public class MktResourceSMOImpl implements MktResourceSMO {
 
     @Override
     public int updateMktResource(List<String> mktResNbr) {
-        int mktResource = mktResourceMapper.updateMktResource(mktResNbr);
-        System.out.println(mktResource);
-        return 0;
+        mktResourceMapper.udalDtStart();
+        return mktResourceMapper.updateMktResource(mktResNbr);
     }
 
     @Override

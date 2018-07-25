@@ -55,7 +55,8 @@ public class BusiSMOImpl implements BusiSMO {
 
     @Override
     public String queryConfigDemo() {
-        return prodOfferMDA.getProdOfferName() +"   " + prodOfferMDA.getProdOfferId();
+        return prodOfferMDA.getProdOfferName() +"   " + prodOfferMDA.getProdOfferId() + "   "
+                + prodOfferMDA.getEnviroObject("spring.application.name");
     }
 
     @Override
