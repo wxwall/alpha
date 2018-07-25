@@ -18,8 +18,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -211,9 +213,21 @@ public class Controller extends AbstractController {
     public String testUdalDtStartInterceptor() {
         DataSourceContextHolder.setDataSourceType("ds2");
         List<MktResource> mktList = new ArrayList<>();
-        mktList.add(instancMktResource(1037));
-        mktList.add(instancMktResource(1038));
+        mktList.add(instancMktResource(1041));
+        mktList.add(instancMktResource(1042));
         mktResourceSMO.insertMktResourcesStart(mktList);
         return "";
+    }
+
+    @Autowired
+    DataSource dataSource;
+    @Autowired
+    ApplicationContext applicationContext;
+
+    @ApiOperation(value="通过容器获取指定数据源",notes="通过容器获取指定数据源bean")
+    @RequestMapping(value = "/testGetPointDataSource" ,method = RequestMethod.GET)
+    public String testGetPointDataSource() {
+        Object ds1 = applicationContext.getBean("ds1");
+        return "dd";
     }
 }
