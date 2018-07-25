@@ -7,9 +7,9 @@ server:
 spring:
   application:
     name: service-web
-  #激活的配置文件
+  #激活的配置文件,激活注解@Profile
   profiles:
-    active: test
+    active: test,CTCredis
   #spring-boot-admin注册地址
   boot:
     admin:

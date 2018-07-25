@@ -6,6 +6,7 @@ import com.al.crm.cache.routing.AbstractRedisSourceStrategy;
 import com.al.crm.cache.routing.RedisSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,6 +23,7 @@ public class RedisConfig {
      * @return
      */
     @Bean
+    @Profile("CTCredis")//可用来切换配置，指定配置加载
     public RedisPool getRdisPool0() {
         RedisPool redisPool = new RedisPool();
         redisPool.setMaxTotal(200);
@@ -40,6 +42,7 @@ public class RedisConfig {
      * @return
      */
     @Bean
+    @Profile("CTCredis")
     public RedisPool getRdisPool1() {
         RedisPool redisPool = new RedisPool();
         redisPool.setMaxTotal(200);
@@ -55,6 +58,7 @@ public class RedisConfig {
 
 
     @Bean
+    @Profile("CTCredis")
     public RedisManager getRedisManager(){
         RedisManager redisManager = new RedisManager();
         redisManager.setRedisClient(getRedisSource());
@@ -62,6 +66,7 @@ public class RedisConfig {
     }
 
     @Bean
+    @Profile("CTCredis")
     public RedisSource getRedisSource() {
         Map<Object,Object> targetDataSources = new HashMap<Object,Object>();
         targetDataSources.put("rds01",getRdisPool0());
