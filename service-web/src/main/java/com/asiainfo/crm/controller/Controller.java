@@ -228,6 +228,7 @@ public class Controller extends AbstractController {
     @RequestMapping(value = "/testGetPointDataSource" ,method = RequestMethod.GET)
     public String testGetPointDataSource() {
         Object ds1 = applicationContext.getBean("ds1");
+        Map<String, DataSource> beansOfType = applicationContext.getBeansOfType(DataSource.class);
         return "dd";
     }
 }
