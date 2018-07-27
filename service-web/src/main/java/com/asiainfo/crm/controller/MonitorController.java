@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.asiainfo.crm.busi.BusiModel;
 import com.asiainfo.crm.common.controller.AbstractController;
 import com.asiainfo.crm.common.model.RestResult;
+import com.asiainfo.crm.seq.SeqUtil;
 import com.netflix.appinfo.InstanceInfo;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,8 @@ public class MonitorController extends AbstractController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+    @Autowired
+    private SeqUtil seqUtil;
 
 
     @RequestMapping(value = "/instances" ,method = RequestMethod.GET)
@@ -38,6 +41,23 @@ public class MonitorController extends AbstractController {
         restResult.setMessage(JSONObject.toJSONString(instancesList));
         return restResult;
     }
+
+    @RequestMapping(value = "/querySeq18" ,method = RequestMethod.GET)
+    public RestResult querySeq18(){
+        String aLong = seqUtil.querySeq18();
+        RestResult restResult = new RestResult();
+        restResult.setMessage(aLong.toString());
+        return restResult;
+    }
+
+    @RequestMapping(value = "/querySeq16" ,method = RequestMethod.GET)
+    public RestResult querySeq16(){
+        String aLong = seqUtil.querySeq16();
+        RestResult restResult = new RestResult();
+        restResult.setMessage(aLong.toString());
+        return restResult;
+    }
+
 
     private List<String> getInstances(String service_id) {
         List<String> instancesList = new ArrayList<>();

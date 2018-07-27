@@ -36,6 +36,13 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
+		<!-- 统一能力包，包含统一序列，缓存能力-->
+		<dependency>
+			<groupId>com.asiainfo.crm</groupId>
+			<artifactId>crm-common</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
 		<!-- spring-boot-admin-client -->
 		<dependency>
 			<groupId>de.codecentric</groupId>
@@ -67,6 +74,8 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.21</version>
 		</dependency>
+
+
 
 
 		<!--基于组件新增 begin-->
@@ -105,7 +114,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.18.1</version>
 				<configuration>
-					<skipTests>false</skipTests>
+					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 
