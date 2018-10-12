@@ -100,6 +100,7 @@ public class Controller extends AbstractController {
      * 日志级别： TRACE, DEBUG, INFO, WARN, ERROR
      * @return
      */
+    @ApiOperation(value="日志输出",notes="打印不同日志级别的日志")
     @RequestMapping(value = "/queryLogDemo" ,method = RequestMethod.GET)
     public RestResult<BusiModel> queryLogDemo(){
         logger.trace("这是一个日志{}输出","trace");
@@ -161,7 +162,7 @@ public class Controller extends AbstractController {
     @RequestMapping(value = "/testudamhint" ,method = RequestMethod.GET)
     public String testJndi() {
         DataSourceContextHolder.setDataSourceType("ds2");
-        HintContextHolder.setHintOfSelectSql("/* !HINT({\"balance\":\"2\"})*/");
+        HintContextHolder.setHintOfSelectSql(" !HINT({\"balance\":\"2\"})");
         PageHelper.offsetPage(0,2);
         MktResource mktResource = mktResourceSMO.getMktResourceById(1);
         if(mktResource==null){

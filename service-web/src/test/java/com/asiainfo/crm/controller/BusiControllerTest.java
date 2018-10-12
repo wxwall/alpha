@@ -1,6 +1,5 @@
 package com.asiainfo.crm.controller;
 
-import com.ai.datasources.DataSourceContextHolder;
 import com.asiainfo.crm.ServiceApplication;
 import org.junit.Before;
 import org.junit.Test;
@@ -41,7 +40,7 @@ public class BusiControllerTest {
 
     @Test
     public void getBusi() throws Exception {
-        DataSourceContextHolder.setDataSourceType("dataSource0");
+        //DataSourceContextHolder.setDataSourceType("dataSource0");
         // 1、get查一下busi列表，应该为空
         request = get("/busi/");
         mvc.perform(request)

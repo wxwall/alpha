@@ -1,18 +1,9 @@
 package com.asiainfo.crm.controller;
 
-import com.ai.datasources.DataSourceContextHolder;
-import com.asiainfo.crm.busi.MktResource;
 import com.asiainfo.crm.busi.service.MktResourceSMO;
-import com.asiainfo.crm.common.model.RestResult;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Restful
@@ -27,7 +18,7 @@ public class JdbcController {
     @Autowired
     MktResourceSMO mktResourceSMO;
 
-    @ApiOperation(value="处理\"/mktResource/\"的PUT请求，用来更新mktResource信息", notes="数据库中涉及多个分片更新，注意事务")
+    /*@ApiOperation(value="处理\"/mktResource/\"的PUT请求，用来更新mktResource信息", notes="数据库中涉及多个分片更新，注意事务")
     @RequestMapping(value="/", method= RequestMethod.PUT)
     public RestResult putMktResource() {
         DataSourceContextHolder.setDataSourceType("ds2");
@@ -60,6 +51,6 @@ public class JdbcController {
         MktResource mktResources = mktResourceSMO.getMktResource(id);
         restResult.setData(mktResources);
         return restResult;
-    }
+    }*/
 
 }

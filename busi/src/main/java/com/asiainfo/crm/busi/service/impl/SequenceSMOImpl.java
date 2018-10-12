@@ -1,6 +1,5 @@
 package com.asiainfo.crm.busi.service.impl;
 
-import com.ai.datasources.DataSourceContextHolder;
 import com.asiainfo.crm.busi.dao.SequenceDao;
 import com.asiainfo.crm.busi.service.SequenceSMO;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,10 +1,5 @@
 package com.asiainfo.crm.config.common;
 
-import com.ai.hint.HintInterceptor;
-import org.apache.ibatis.plugin.Interceptor;
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
@@ -14,8 +9,8 @@ import org.springframework.context.annotation.ImportResource;
 @Configuration
 @ImportResource("classpath:/spring-boot/spring-context.xml")
 public class Ctg2Config {
-    @Bean
+    /*@Bean
     public Interceptor hintInterceptor(){
         return new HintInterceptor();
-    }
+    }*/
 }

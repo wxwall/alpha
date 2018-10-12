@@ -37,23 +37,19 @@
 		</dependency>
 
 		<!-- 统一能力包，包含统一序列，缓存能力-->
-		<dependency>
+		<!--<dependency>
 			<groupId>com.asiainfo.crm</groupId>
 			<artifactId>crm-common</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
+-->
 
-		<!-- spring-boot-admin-client -->
-		<dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-starter-client</artifactId>
-			<version>1.3.4</version>
-		</dependency>
 
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.0.4.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -61,11 +57,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
 		</dependency>
 
 		<!-- mysql-->
@@ -75,6 +71,12 @@
 			<version>5.1.21</version>
 		</dependency>
 
+		<!-- spring-boot-admin-client -->
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>2.0.0</version>
+		</dependency>
 
 
 
@@ -85,12 +87,7 @@
 			<artifactId>druid</artifactId>
 			<version>1.0.11</version>
 		</dependency>
-		<!--fastjson-->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-			<version>1.2.17</version>
-		</dependency>
+
     </dependencies>
 
 
