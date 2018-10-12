@@ -1,16 +1,9 @@
 package com.asiainfo.crm.controller;
 
 import com.asiainfo.crm.AbstractTest;
-import com.asiainfo.crm.seq.SeqUtil;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.stream.Collectors;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -23,9 +16,9 @@ public class MonitorControllerTest extends AbstractTest {
 
     RequestBuilder request = null;
 
-
+/*
     @Autowired
-    SeqUtil seqUtil;
+    SeqUtil seqUtil;*/
 
 
     @Test
@@ -41,13 +34,13 @@ public class MonitorControllerTest extends AbstractTest {
     /**
      * 并发多线程测试，检查是否重复ID
      */
-    @Test
+   /* @Test
     public void concurrentQuerySeq18(){
         int countDownNum = 1000;
-        List list = new ArrayList<String>(1000);
+        Vector list = new Vector(1000);
         CountDownLatch countDownLatch = new CountDownLatch(countDownNum);
         for (int i = 0; i < countDownNum; i++) {
-            new Thread(new Runnable() {
+            Thread thread = new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
@@ -59,7 +52,8 @@ public class MonitorControllerTest extends AbstractTest {
                     String s = seqUtil.querySeq18();
                     list.add(s);
                 }
-            }).start();
+            });
+
             countDownLatch.countDown();
         }
 
@@ -75,7 +69,7 @@ public class MonitorControllerTest extends AbstractTest {
         System.out.println("去重后" + newList.size());
 
 
-    }
+    }*/
 
 
     @Test
