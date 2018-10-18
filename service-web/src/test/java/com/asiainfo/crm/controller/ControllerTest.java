@@ -1,17 +1,23 @@
 package com.asiainfo.crm.controller;
 
+import com.ai.datasources.DataSourceContextHolder;
 import com.asiainfo.crm.ServiceApplication;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -95,6 +101,26 @@ public class ControllerTest {
                 .content("{\"customerOrderId\":120001470540,\"areaId\":8320200,\"methodName\":\"updateOrderInfoForCheck\"}".getBytes()))
                 .andExpect(status().isOk())
                 .andDo(print());
+    }
+
+    @Autowired
+    ApplicationContext applicationContext;
+
+    @Test
+    public void contextLoads() throws SQLException {
+        /*for (String beanName : applicationContext.getBeanDefinitionNames()) {
+            System.out.println(beanName);
+        }*/
+        DataSource dataSource0 = (DataSource)applicationContext.getBean("dataSource");
+        Connection connection0 = dataSource0.getConnection();
+
+        DataSourceContextHolder.setDataSourceType("ds1");
+        DataSource dataSource1 = (DataSource)applicationContext.getBean("dataSource");
+        Connection connection1 = dataSource1.getConnection();
+
+        DataSourceContextHolder.setDataSourceType("ds2");
+        DataSource dataSource2 = (DataSource)applicationContext.getBean("dataSource");
+        Connection connection2 = dataSource2.getConnection();
     }
 
 }

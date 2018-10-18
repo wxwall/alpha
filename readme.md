@@ -1,4 +1,6 @@
-#alpha版本
+#beta版本
+>目前springcloud版本升级到2.0版本
+
 
 ####目录结构
  

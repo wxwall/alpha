@@ -1,6 +1,6 @@
 package com.asiainfo.crm.common.model;
 
-public enum ResponseCode {
+public enum HttpCode {
 	/** 正确 **/
 	SUCCESS_CODE(200),
 	/** 参数错误 **/
@@ -24,7 +24,7 @@ public enum ResponseCode {
 	public int getCode() {
 		return code;
 	}
-	private ResponseCode(int code) {
+	private HttpCode(int code) {
 		this.code = code;
 	}
 }

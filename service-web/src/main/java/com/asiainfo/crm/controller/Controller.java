@@ -11,6 +11,8 @@ import com.asiainfo.crm.busi.service.MktResourceSMO;
 import com.asiainfo.crm.common.annotation.SysLog;
 import com.asiainfo.crm.common.controller.AbstractController;
 import com.asiainfo.crm.common.exception.BaseException;
+import com.asiainfo.crm.common.exception.RestfulException;
+import com.asiainfo.crm.common.model.RestFulExceptionCode;
 import com.asiainfo.crm.common.model.RestResult;
 import com.asiainfo.crm.multi.SoWebMultiSMO;
 import com.github.pagehelper.PageHelper;
@@ -232,4 +234,17 @@ public class Controller extends AbstractController {
         Map<String, DataSource> beansOfType = applicationContext.getBeansOfType(DataSource.class);
         return "dd";
     }
+
+
+
+    /**
+     * 日志级别： TRACE, DEBUG, INFO, WARN, ERROR
+     * @return
+     */
+    @ApiOperation(value="3.0统一异常",notes="3.0统一异常")
+    @RequestMapping(value = "/queryRestFulException" ,method = RequestMethod.GET)
+    public RestResult<BusiModel> queryRestFulException(){
+        throw new RestfulException(RestFulExceptionCode.NOT_FOUND_EXCEPTION);
+    }
+
 }

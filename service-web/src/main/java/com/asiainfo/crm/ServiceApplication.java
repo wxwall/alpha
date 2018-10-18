@@ -21,5 +21,6 @@ public class ServiceApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(ServiceApplication.class, args);
+		Object dataSource = applicationContext.getBean("dataSource");
 	}
 }
